@@ -27,6 +27,7 @@ library
       Prelate
       Prelate.Atomic
       Prelate.Json
+      Prelate.Prelude
       Process
   reexported-modules:
       Control.Concurrent.STM
