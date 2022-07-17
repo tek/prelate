@@ -81,6 +81,8 @@ let
     "Data.Text.Lazy.IO"
     "Data.Text.Read"
     "Data.Tree"
+    "Lens.Micro"
+    "Lens.Micro.GHC"
     "Polysemy.Chronos"
     "Polysemy.Conc"
     "Polysemy.Conc.Queue"
