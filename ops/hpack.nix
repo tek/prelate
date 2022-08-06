@@ -106,7 +106,8 @@ in {
       dependencies = [
         "aeson >= 2.0"
         "base >= 4.13 && < 4.17"
-        "generic-lens"
+        "extra >= 1.7.10"
+        "generic-lens >= 2.2"
         "incipit >= 0.3"
         "microlens >= 0.4"
         "microlens-ghc >= 0.4"
