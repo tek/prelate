@@ -1,6 +1,6 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.34.6.
+-- This file has been generated from package.yaml by hpack version 0.34.7.
 --
 -- see: https://github.com/sol/hpack
 
@@ -59,6 +59,7 @@ library
     , Data.Text.Lazy.IO
     , Data.Text.Read
     , Data.Tree
+    , Exon
     , Lens.Micro
     , Lens.Micro.GHC
     , Polysemy.Chronos
@@ -97,6 +98,7 @@ library
       DisambiguateRecordFields
       DoAndIfThenElse
       DuplicateRecordFields
+      EmptyCase
       EmptyDataDecls
       ExistentialQuantification
       FlexibleContexts
@@ -111,8 +113,9 @@ library
       MultiParamTypeClasses
       MultiWayIf
       NamedFieldPuns
-      OverloadedStrings
+      OverloadedLabels
       OverloadedLists
+      OverloadedStrings
       PackageImports
       PartialTypeSignatures
       PatternGuards
@@ -140,6 +143,7 @@ library
   build-depends:
       aeson >=2.0
     , base >=4.13 && <4.17
+    , exon >=1.0.1
     , extra >=1.7.10
     , generic-lens >=2.2
     , incipit >=0.3
