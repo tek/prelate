@@ -16,11 +16,12 @@ import Control.Monad.Extra (
   whileM,
   )
 
--- |Version of 'maybe' that takes an action as fallback.
-fromMaybeA ::
-  Applicative m =>
-  m a ->
-  Maybe a ->
+-- |Call a side-effecting function on a value and return the value.
+tap ::
+  Functor m =>
+  (a -> m ()) ->
+  a ->
   m a
-fromMaybeA fallback =
-  maybe fallback pure
+tap f a =
+  a <$ f a
+{-# inline tap #-}
