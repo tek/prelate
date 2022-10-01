@@ -83,6 +83,7 @@ let
     "Data.Tree"
     "Exon"
     "Lens.Micro"
+    "Lens.Micro.Extras"
     "Lens.Micro.GHC"
     "Polysemy.Chronos"
     "Polysemy.Conc"
