@@ -10,7 +10,7 @@
   outputs = { hix, incipit, exon, ... }:
   let
     all = { hackage, source, ... }: {
-      exon = hackage "1.0.1.0" "1smxsdcjzczhxk8c4a8mpb964cflknlnn4xlv5y6lvmz40fciyjc";
+      exon = hackage "1.2.0.0" "0il7167fk6bk2ahza2cpzhdjkyvdzwcwfdqcqaxhsv7nj6hckg5l";
       incipit = hackage "0.3.0.0" "1f3snncncfiimkgv345ybxqjwdfahjl2aqg27vpr8sgcsfc3n6d2";
     };
 
