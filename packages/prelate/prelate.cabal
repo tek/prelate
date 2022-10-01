@@ -26,6 +26,7 @@ library
   exposed-modules:
       Prelate
       Prelate.Atomic
+      Prelate.Control.Applicative
       Prelate.Control.Monad
       Prelate.Data.List
       Prelate.Data.Maybe
