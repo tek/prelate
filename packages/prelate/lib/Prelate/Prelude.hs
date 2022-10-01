@@ -3,6 +3,7 @@ module Prelate.Prelude (
   module Prelate.Prelude,
   module Prelate.Atomic,
   module Prelate.Control.Monad,
+  module Prelate.Data.List,
   module Prelate.Data.Maybe,
   module Prelate.Json,
   module Data.Aeson,
@@ -18,6 +19,7 @@ import Lens.Micro.GHC (at)
 
 import Prelate.Atomic
 import Prelate.Control.Monad
+import Prelate.Data.List
 import Prelate.Data.Maybe
 import Prelate.Json
 

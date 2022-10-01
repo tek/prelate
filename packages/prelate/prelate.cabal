@@ -27,6 +27,7 @@ library
       Prelate
       Prelate.Atomic
       Prelate.Control.Monad
+      Prelate.Data.List
       Prelate.Data.Maybe
       Prelate.Json
       Prelate.Prelude
