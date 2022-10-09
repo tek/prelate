@@ -11,7 +11,7 @@
   let
     all = { hackage, source, ... }: {
       exon = hackage "1.2.0.0" "0il7167fk6bk2ahza2cpzhdjkyvdzwcwfdqcqaxhsv7nj6hckg5l";
-      incipit = hackage "0.3.0.0" "1f3snncncfiimkgv345ybxqjwdfahjl2aqg27vpr8sgcsfc3n6d2";
+      incipit = hackage "0.3.1.0" "1cr3k30hbzyxxjldwhc0b5mq07g0lhbdfa6395qr3gfy2shvd6bh";
     };
 
     ghc924 = { hackage, jailbreak, notest, ... }: {

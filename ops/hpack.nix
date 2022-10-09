@@ -111,7 +111,7 @@ in {
         "extra >= 1.7.10"
         "exon >= 1.0.1"
         "generic-lens >= 2.2"
-        "incipit >= 0.3"
+        "incipit >= 0.3.1"
         "microlens >= 0.4"
         "microlens-ghc >= 0.4"
         "polysemy-chronos >= 0.5"
