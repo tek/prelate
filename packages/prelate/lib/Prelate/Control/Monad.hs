@@ -1,3 +1,4 @@
+-- |Monad reexports from @extra@ and some combinators
 module Prelate.Control.Monad (
   module Prelate.Control.Monad,
   module Control.Monad.Extra,

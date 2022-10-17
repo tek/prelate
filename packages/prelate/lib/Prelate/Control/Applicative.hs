@@ -1,3 +1,4 @@
+-- |Applicative combinators
 module Prelate.Control.Applicative where
 
 -- |Create a pair from two applicative values.

@@ -1,3 +1,4 @@
+-- | Aeson TH functions
 module Prelate.Json (
   json,
   unaryJson,
@@ -8,7 +9,6 @@ import Data.Aeson.TH (deriveJSON)
 import Data.Generics.Labels ()
 import Data.List (dropWhileEnd)
 import qualified Language.Haskell.TH.Syntax as TH
-
 
 -- |Aeson codec options that remove leading and trailing underscores.
 basicOptions :: Aeson.Options

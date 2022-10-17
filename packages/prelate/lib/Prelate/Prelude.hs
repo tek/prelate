@@ -1,3 +1,4 @@
+-- |A Polysemy Prelude with some basic libraries
 module Prelate.Prelude (
   module Incipit,
   module Prelate.Prelude,

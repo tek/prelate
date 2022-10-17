@@ -1,3 +1,4 @@
+-- |Maybe combinators
 module Prelate.Data.Maybe where
 
 -- |Return 'Just' if the condition is 'True'.
