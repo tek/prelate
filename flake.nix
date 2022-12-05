@@ -11,7 +11,7 @@
   let
     all = { hackage, source, ... }: {
       exon = hackage "1.2.0.0" "0il7167fk6bk2ahza2cpzhdjkyvdzwcwfdqcqaxhsv7nj6hckg5l";
-      incipit = hackage "0.4.0.0" "1z253d06j57jd7aj7kqx6hl4nx8m3q9fy2lrxd1abwswa7mr6mz4";
+      incipit = hackage "0.5.0.0" "1ghz62nb6qx3gs876dan3d4h8qiziv1a31jmhazii5y7qf8m4aqg";
     };
 
     ghc924 = { hackage, jailbreak, notest, ... }: {
@@ -22,8 +22,8 @@
     };
 
     dev = { hackage, ... }: {
-      polysemy-conc = hackage "0.10.0.0" "1l6lbkv3z5i9sr0xiygvcabn769lafphp51mx347xpq45qsfxilc";
-      polysemy-process = hackage "0.10.0.0" "12dgacx7wsv503l00plj23qaz87zyphnhi302c7ar0hr48nmxskn";
+      polysemy-conc = hackage "0.11.0.0" "1gnxha1r8fwv164j6jwhw6zszknrc71vqyb03xd03c7hp2hgs46v";
+      polysemy-process = hackage "0.11.0.0" "065s582g8axicsc5zxmdhc5xa55dppn8q3q17kjd7bclih9wdwjv";
     };
 
   in hix.lib.pro ({ config, lib, ... }: {
