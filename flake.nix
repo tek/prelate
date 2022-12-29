@@ -3,7 +3,7 @@
 
   inputs = {
     hix.url = "git+https://git.tryp.io/tek/hix";
-    incipit.url = "git+https://git.tryp.io/tek/incipit?tag=v0.6.1.0";
+    incipit.url = "git+https://git.tryp.io/tek/incipit?tag=v0.7.0.0";
     exon.url = "git+https://git.tryp.io/tek/exon";
   };
 
@@ -11,10 +11,10 @@
   let
 
     all = { hackage, jailbreak, unbreak, ... }: {
-      incipit-base = hackage "0.4.1.0" "17579j3hzsh3ic0272h8ly8k7gz4zm1hv5jqimdam9gcq8alahkl";
-      incipit-core = hackage "0.4.1.0" "1fm6bf1w8mvpa9qlgxqv3ngf0lyb3057cwv5ajibgbljjaznxpxc";
-      incipit = hackage "0.6.1.0" "1g2bvwbj450f4gk0v9dd4dz1vlj623i6p99q7p6b8qbcxs8ygw02";
-      type-errors-pretty = jailbreak unbreak;
+      exon = hackage "1.3.0.0" "06g2846z0ls4lbdvhazvcyq9504054nhc5l2ai14saazxdzx4a2a";
+      incipit-base = hackage "0.5.0.0" "02fdppamn00m94xqi4zhm6sl1ndg6lhn24m74w24pq84h44mynl6";
+      incipit-core = hackage "0.5.0.0" "1pql8s941jb21kvsx5py4ffnilm1ga136npa25ifsh3l7yapci30";
+      incipit = hackage "0.7.0.0" "1gwca88qldfn7qmx0wmpcpasr8qajyppijj8ahif8lav3pf37gvn";
     };
 
   in hix.lib.pro ({ config, lib, ... }: {

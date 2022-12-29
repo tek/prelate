@@ -513,17 +513,17 @@
         "polysemy-log": "polysemy-log"
       },
       "locked": {
-        "lastModified": 1672281291,
-        "narHash": "sha256-ANC0mUkqVBWaiceG9J86seWQEly2ioqlL4JBTuvz0Dc=",
+        "lastModified": 1672319091,
+        "narHash": "sha256-TUdCdT8hxqbqo0q3WBibeYX0rCfuF8Q+c47wA3/ozEY=",
         "ref": "refs/heads/main",
-        "rev": "1bbb797efdeafd08469f4d4429b85f21aa3fcc28",
-        "revCount": 49,
+        "rev": "d1b00796f7f0b0abb37925c581794a67c6d1b01d",
+        "revCount": 51,
         "type": "git",
-        "url": "https://git.tryp.io/tek/incipit?tag=v0.6.1.0"
+        "url": "https://git.tryp.io/tek/incipit?tag=v0.7.0.0"
       },
       "original": {
         "type": "git",
-        "url": "https://git.tryp.io/tek/incipit?tag=v0.6.1.0"
+        "url": "https://git.tryp.io/tek/incipit?tag=v0.7.0.0"
       }
     },
     "nixpkgs": {
