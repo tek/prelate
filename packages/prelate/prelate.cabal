@@ -1,6 +1,6 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.34.7.
+-- This file has been generated from package.yaml by hpack version 0.35.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -145,18 +145,18 @@ library
   ghc-options: -Wall -Wredundant-constraints -Wincomplete-uni-patterns -Wmissing-deriving-strategies -Widentities -Wunused-packages
   build-depends:
       aeson >=2.0
-    , base >=4.13 && <4.17
+    , base >=4.13 && <4.18
     , exon ==1.2.*
     , extra >=1.7.10 && <1.8
     , generic-lens >=2.2
-    , incipit ==0.5.*
+    , incipit ==0.6.*
     , microlens ==0.4.*
     , microlens-ghc ==0.4.*
-    , polysemy-chronos ==0.5.*
-    , polysemy-conc ==0.11.*
-    , polysemy-log ==0.8.*
-    , polysemy-process ==0.11.*
-    , polysemy-resume ==0.5.*
-    , polysemy-time ==0.5.*
+    , polysemy-chronos ==0.6.*
+    , polysemy-conc ==0.12.*
+    , polysemy-log ==0.9.*
+    , polysemy-process ==0.12.*
+    , polysemy-resume ==0.7.*
+    , polysemy-time ==0.6.*
     , template-haskell
   default-language: Haskell2010

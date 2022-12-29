@@ -107,19 +107,19 @@ in {
     library = {
       dependencies = [
         "aeson >= 2.0"
-        "base >= 4.13 && < 4.17"
+        "base >= 4.13 && < 4.18"
         "extra ^>= 1.7.10"
         "exon ^>= 1.2"
         "generic-lens >= 2.2"
-        "incipit ^>= 0.5"
+        "incipit ^>= 0.6"
         "microlens ^>= 0.4"
         "microlens-ghc ^>= 0.4"
-        "polysemy-chronos ^>= 0.5"
-        "polysemy-conc ^>= 0.11"
-        "polysemy-log ^>= 0.8"
-        "polysemy-process ^>= 0.11"
-        "polysemy-resume ^>= 0.5"
-        "polysemy-time ^>= 0.5"
+        "polysemy-chronos ^>= 0.6"
+        "polysemy-conc ^>= 0.12"
+        "polysemy-log ^>= 0.9"
+        "polysemy-process ^>= 0.12"
+        "polysemy-resume ^>= 0.7"
+        "polysemy-time ^>= 0.6"
         "template-haskell"
       ];
       inherit reexported-modules;
