@@ -109,7 +109,7 @@ in {
         "aeson >= 2.0"
         "base >= 4.13 && < 4.18"
         "extra ^>= 1.7.10"
-        "exon ^>= 1.3"
+        "exon ^>= 1.4"
         "generic-lens >= 2.2"
         "incipit ^>= 0.7"
         "microlens ^>= 0.4"
