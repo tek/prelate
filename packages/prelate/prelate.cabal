@@ -25,6 +25,7 @@ source-repository head
 library
   exposed-modules:
       Prelate
+      Prelate.App
       Prelate.Atomic
       Prelate.Control.Applicative
       Prelate.Control.Monad

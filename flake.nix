@@ -3,11 +3,12 @@
 
   inputs = {
     hix.url = "git+https://git.tryp.io/tek/hix";
+    hls.url = "github:haskell/haskell-language-server?ref=1.9.0.0";
     incipit.url = "git+https://git.tryp.io/tek/incipit?tag=v0.7.0.0";
     exon.url = "git+https://git.tryp.io/tek/exon";
   };
 
-  outputs = { hix, incipit, exon, ... }:
+  outputs = { hix, hls, incipit, exon, ... }:
   let
 
     all = { hackage, jailbreak, unbreak, ... }: {
@@ -19,10 +20,11 @@
 
   in hix.lib.pro ({ config, lib, ... }: {
     packages.prelate = ./packages/prelate;
-    devGhc.compiler = "ghc943";
+    devGhc.compiler = "ghc925";
     overrides = { inherit all; };
     deps = [incipit exon];
     hackage.versionFile = "ops/version.nix";
     hpack.packages = import ./ops/hpack.nix { inherit config lib; };
+    shell.hls.package = hls.packages.${config.system}.haskell-language-server-925;
   });
 }

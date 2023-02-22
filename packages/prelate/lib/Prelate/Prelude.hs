@@ -3,6 +3,7 @@ module Prelate.Prelude (
   module Incipit,
   module Prelate.Prelude,
   module Prelate.Atomic,
+  module Prelate.App,
   module Prelate.Control.Applicative,
   module Prelate.Control.Monad,
   module Prelate.Data.List,
@@ -20,6 +21,7 @@ import Lens.Micro hiding (lens)
 import Lens.Micro.GHC (at)
 
 import Prelate.Atomic
+import Prelate.App
 import Prelate.Control.Applicative
 import Prelate.Control.Monad
 import Prelate.Data.List
