@@ -16,6 +16,7 @@
       incipit-base = hackage "0.5.0.0" "02fdppamn00m94xqi4zhm6sl1ndg6lhn24m74w24pq84h44mynl6";
       incipit-core = hackage "0.5.0.0" "1pql8s941jb21kvsx5py4ffnilm1ga136npa25ifsh3l7yapci30";
       incipit = hackage "0.7.0.0" "1gwca88qldfn7qmx0wmpcpasr8qajyppijj8ahif8lav3pf37gvn";
+      zeugma = hackage "0.7.0.0" "150vrib454a8vssrndi0xfdfg1zrlkfg6yi6jjjbhpmkimf80wvs";
     };
 
   in hix.lib.pro ({ config, lib, ... }: {
