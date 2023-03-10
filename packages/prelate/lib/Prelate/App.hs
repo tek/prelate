@@ -16,6 +16,7 @@ import qualified Data.Text.IO as Text
 import Incipit
 import Log (Severity (Info), interpretLogStderrLevelConc)
 import Polysemy.Chronos (ChronosTime, interpretTimeChronos)
+import System.Exit (exitFailure)
 import System.IO (stderr)
 
 -- | The default stack for a Prelate app.
@@ -32,6 +33,11 @@ printError :: Text -> IO ()
 printError msg =
   Text.hPutStrLn stderr ("Error: " <> msg)
 
+exitError :: Text -> IO a
+exitError msg = do
+  printError msg
+  exitFailure
+
 -- | Run the default 'AppStack' with the specified log level and return a potential error as 'Left'.
 runAppLevelE ::
   Severity ->
@@ -45,16 +51,17 @@ runAppLevelE level =
   interpretLogStderrLevelConc (Just level) .
   interpretTimeChronos
 
--- | Run the default 'AppStack' with the specified log level and print an potential error to stderr.
+-- | Run the default 'AppStack' with the specified log level and print a potential error to stderr, exiting with failure
+-- code.
 runAppLevel ::
   Severity ->
-  Sem AppStack () ->
-  IO ()
+  Sem AppStack a ->
+  IO a
 runAppLevel level =
-  leftA printError <=< runAppLevelE level
+  leftA exitError <=< runAppLevelE level
 
--- | Run the default 'AppStack' and print an potential error to stderr.
-runApp :: Sem AppStack () -> IO ()
+-- | Run the default 'AppStack' and print an potential error to stderr, exiting with failure code.
+runApp :: Sem AppStack a -> IO a
 runApp =
   runAppLevel Info
 
