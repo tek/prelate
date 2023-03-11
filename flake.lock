@@ -798,11 +798,11 @@
         "thax": "thax_2"
       },
       "locked": {
-        "lastModified": 1676500929,
-        "narHash": "sha256-moM3zVV26jBMoLhxW5G+NVyn6KcVOgKCvQhgg0SC63g=",
+        "lastModified": 1677960834,
+        "narHash": "sha256-Znl3KD1OTk0UzmmaEEQnd0GPlJk13LJ6RTZqzwJ24pc=",
         "ref": "refs/heads/main",
-        "rev": "fd50f12677e79e943996ec97dbd812ba4c9a6d1c",
-        "revCount": 261,
+        "rev": "d4e4e74588855dc2ca3471c9a31c8024db998cba",
+        "revCount": 264,
         "type": "git",
         "url": "https://git.tryp.io/tek/hix"
       },
@@ -1386,11 +1386,11 @@
         "polysemy-log": "polysemy-log"
       },
       "locked": {
-        "lastModified": 1677069363,
-        "narHash": "sha256-78ZtndMPMqH2P5i7/RuCw3/hBVd2E2cfp2uFZscS0pc=",
+        "lastModified": 1678531948,
+        "narHash": "sha256-29g1hvQjdgmHYmebWQ6FkN8kBBsSsPMy4byaipWvHYY=",
         "ref": "refs/heads/main",
-        "rev": "cb9f230c54ea055fa3b72acfc647b3c3017fc366",
-        "revCount": 53,
+        "rev": "d4105a7c45dcf905a2171793417509ddc380e5c6",
+        "revCount": 56,
         "type": "git",
         "url": "https://git.tryp.io/tek/incipit?tag=v0.7.0.0"
       },
@@ -2321,11 +2321,11 @@
     },
     "thax_2": {
       "locked": {
-        "lastModified": 1650770034,
-        "narHash": "sha256-OI4dxtNKgXogHBwYnNAfDABhHEcmWiBkkboZ+cCfyzk=",
+        "lastModified": 1677960812,
+        "narHash": "sha256-FYkZZVTMBo0dtqPr73tadUz+69jgQBo2S4qKOxTGWZ4=",
         "owner": "tek",
         "repo": "thax",
-        "rev": "dc0025eebaba4ad97fcf48b68c14c8901d90daa5",
+        "rev": "4b4f68d0232e1f707d97bbcaab0d5534b97ba94f",
         "type": "github"
       },
       "original": {
