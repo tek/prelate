@@ -14,8 +14,8 @@
 
     overrides = { hackage, jailbreak, unbreak, ... }: {
       exon = hackage "1.4.0.0" "1m4i3a14wip985ncblfy2ikcy7gw5rryj9z497ah218d1nmwj7rl";
-      incipit = hackage "0.7.0.0" "1gwca88qldfn7qmx0wmpcpasr8qajyppijj8ahif8lav3pf37gvn";
-      zeugma = hackage "0.7.0.0" "150vrib454a8vssrndi0xfdfg1zrlkfg6yi6jjjbhpmkimf80wvs";
+      incipit = hackage "0.8.0.0" "0gwplncdnhyva9ci1g6isa91wgxsppj8m6d3qvwm0nb6sb2zaq1n";
+      zeugma = hackage "0.8.0.0" "1gkh27d69afs53ggr70smiim6b4r3p6pzycbba37mzmdab6667z8";
     };
 
     cabal = {
@@ -43,7 +43,7 @@
           "extra ^>= 1.7.10"
           "exon ^>= 1.4"
           "generic-lens >= 2.2"
-          "incipit ^>= 0.7"
+          "incipit ^>= 0.8"
           "microlens ^>= 0.4"
           "microlens-ghc ^>= 0.4"
           "polysemy-chronos ^>= 0.6"
@@ -53,6 +53,7 @@
           "polysemy-resume ^>= 0.7"
           "polysemy-time ^>= 0.6"
           "template-haskell"
+          "zeugma ^>= 0.8"
         ];
         component.reexported-modules = [
           "Control.Concurrent.STM"
@@ -99,6 +100,7 @@
           "Queue"
           "Sync"
           "Time"
+          "Zeugma"
         ];
       };
 
