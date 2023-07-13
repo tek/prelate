@@ -194,11 +194,11 @@
         "polysemy-log": "polysemy-log"
       },
       "locked": {
-        "lastModified": 1689276117,
-        "narHash": "sha256-1fqTmRlAZcpu8vv9SKexcw0W2ajr4az3F6bPyZOsB6M=",
+        "lastModified": 1689277476,
+        "narHash": "sha256-6bBKwyf+rDiRb6nYq+7r2+9UbJac/HMrbXl1b2Os7P0=",
         "ref": "refs/heads/main",
-        "rev": "ea9c478529bddd3c3bd00da7b8e7423ddde932ad",
-        "revCount": 61,
+        "rev": "b080949efcaa01f51dfc00b742441188bde8c172",
+        "revCount": 63,
         "type": "git",
         "url": "https://git.tryp.io/tek/incipit"
       },

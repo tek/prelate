@@ -15,7 +15,7 @@
     overrides = { hackage, jailbreak, unbreak, ... }: {
       exon = hackage "1.4.0.0" "1m4i3a14wip985ncblfy2ikcy7gw5rryj9z497ah218d1nmwj7rl";
       incipit = hackage "0.8.0.0" "0gwplncdnhyva9ci1g6isa91wgxsppj8m6d3qvwm0nb6sb2zaq1n";
-      zeugma = hackage "0.8.0.0" "1gkh27d69afs53ggr70smiim6b4r3p6pzycbba37mzmdab6667z8";
+      zeugma = hackage "0.8.1.0" "1yg5fs4vyz27d2vlzdb6467zn2jpx725cjvsxh7lwa8fdfm4f1wv";
     };
 
     cabal = {
