@@ -11,6 +11,7 @@
     ghcVersions = ["ghc810" "ghc90" "ghc92" "ghc94"];
     hackage.versionFile = "ops/version.nix";
     deps = [exon incipit];
+    gen-overrides.enable = true;
 
     overrides = { hackage, jailbreak, unbreak, ... }: {
       exon = hackage "1.4.0.0" "1m4i3a14wip985ncblfy2ikcy7gw5rryj9z497ah218d1nmwj7rl";
