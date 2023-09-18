@@ -7,16 +7,25 @@
     exon.url = "git+https://git.tryp.io/tek/exon";
   };
 
-  outputs = { hix, incipit, exon, ... }: hix.lib.pro {
-    ghcVersions = ["ghc810" "ghc90" "ghc92" "ghc94"];
+  outputs = {hix, incipit, exon, ...}: hix.lib.pro {
+    ghcVersions = ["ghc92" "ghc94" "ghc96"];
     hackage.versionFile = "ops/version.nix";
     deps = [exon incipit];
     gen-overrides.enable = true;
 
-    overrides = { hackage, jailbreak, unbreak, ... }: {
-      exon = hackage "1.4.0.0" "1m4i3a14wip985ncblfy2ikcy7gw5rryj9z497ah218d1nmwj7rl";
-      incipit = hackage "0.8.0.0" "0gwplncdnhyva9ci1g6isa91wgxsppj8m6d3qvwm0nb6sb2zaq1n";
-      zeugma = hackage "0.8.1.0" "1yg5fs4vyz27d2vlzdb6467zn2jpx725cjvsxh7lwa8fdfm4f1wv";
+    overrides = {unbreak, jailbreak, ...}: {
+      polysemy-process = unbreak jailbreak;
+    };
+
+    envs.ghc96.overrides = {jailbreak, ...}: {
+      generics-sop = jailbreak;
+    };
+
+    envs.dev.overrides = {hackage, ...}: {
+      exon = hackage "1.5.0.0" "07jawnnmpdqfnvmayv64xc4n0j9mbcgdyyqsg3dn3a3z1f4fxnfm";
+      incipit = hackage "0.9.0.0" "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
+      polysemy-process = hackage "0.13.0.0" "0x78m8p5n3y0nfwnm9cq3qfzqnrc7x1a4xs9x63yl4gl8vnzvvq6";
+      zeugma = hackage "0.9.0.0" "0gahqhbg6hskq4abg9mg9mwvzif63c22mjkxyvvvk9r3jmg9xj8l";
     };
 
     cabal = {
@@ -40,21 +49,20 @@
         enable = true;
         dependencies = [
           "aeson >= 2.0"
-          "base >= 4.13 && < 4.18"
+          "base >= 4.13 && < 4.19"
           "extra ^>= 1.7.10"
-          "exon ^>= 1.4"
+          "exon >= 1.4 && < 1.6"
           "generic-lens >= 2.2"
-          "incipit ^>= 0.8"
+          "incipit >= 0.8 && < 0.10"
           "microlens ^>= 0.4"
           "microlens-ghc ^>= 0.4"
           "polysemy-chronos ^>= 0.6"
-          "polysemy-conc ^>= 0.12"
-          "polysemy-log ^>= 0.9"
-          "polysemy-process ^>= 0.12"
-          "polysemy-resume ^>= 0.7"
+          "polysemy-conc >= 0.12 && < 0.14"
+          "polysemy-log >= 0.9 && < 0.11"
+          "polysemy-process >= 0.12 && < 0.14"
+          "polysemy-resume >= 0.7 && < 0.9"
           "polysemy-time ^>= 0.6"
           "template-haskell"
-          "zeugma ^>= 0.8"
         ];
         component.reexported-modules = [
           "Control.Concurrent.STM"
@@ -101,7 +109,6 @@
           "Queue"
           "Sync"
           "Time"
-          "Zeugma"
         ];
       };
 
