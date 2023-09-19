@@ -2,8 +2,8 @@
 dev = {
   exon = {
   meta = {
-    sha256 = "07jawnnmpdqfnvmayv64xc4n0j9mbcgdyyqsg3dn3a3z1f4fxnfm";
-    ver = "1.5.0.0";
+    sha256 = "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
+    ver = "1.5.0.1";
   };
   drv = { mkDerivation, base, criterion, flatparse, generics-sop
 , ghc-hs-meta, hedgehog, incipit-base, lib, tasty, tasty-hedgehog
@@ -11,8 +11,8 @@ dev = {
 }:
 mkDerivation {
   pname = "exon";
-  version = "1.5.0.0";
-  src = /nix/store/jh1njmdacy2200l6ixaiirgr8lbnwj7v-source;
+  version = "1.5.0.1";
+  src = /nix/store/ldab7gm7m9ynxwycw1pmglwmd1ph2134-source;
   libraryHaskellDepends = [
     base flatparse generics-sop ghc-hs-meta incipit-base
     template-haskell
@@ -364,33 +364,236 @@ mkDerivation {
 ;
 };
 ghc92 = {
-  polysemy-resume = {
+  exon = {
   meta = {
-    sha256 = "1b9agh2qd0nrbd7cc5iabkzjb7g9lnzzy3pprvn33hr54va9p928";
-    ver = "0.7.0.0";
+    sha256 = "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
+    ver = "1.5.0.1";
   };
-  drv = { mkDerivation, base, incipit-core, lib, polysemy, polysemy-plugin
-, polysemy-test, stm, tasty, transformers
+  drv = { mkDerivation, base, criterion, flatparse, generics-sop
+, ghc-hs-meta, hedgehog, incipit-base, lib, tasty, tasty-hedgehog
+, template-haskell
 }:
 mkDerivation {
-  pname = "polysemy-resume";
-  version = "0.7.0.0";
-  src = /nix/store/2l5708xrry0mnv5znidx9affjinmpryq-source;
+  pname = "exon";
+  version = "1.5.0.1";
+  src = /nix/store/ldab7gm7m9ynxwycw1pmglwmd1ph2134-source;
   libraryHaskellDepends = [
-    base incipit-core polysemy transformers
+    base flatparse generics-sop ghc-hs-meta incipit-base
+    template-haskell
   ];
   testHaskellDepends = [
-    base incipit-core polysemy polysemy-plugin polysemy-test stm tasty
+    base hedgehog incipit-base tasty tasty-hedgehog template-haskell
   ];
-  homepage = "https://github.com/tek/polysemy-resume#readme";
-  description = "Polysemy error tracking";
+  benchmarkHaskellDepends = [ base criterion incipit-base ];
+  homepage = "https://github.com/tek/exon#readme";
+  description = "Customizable quasiquote interpolation";
   license = "BSD-2-Clause-Patent";
+}
+;
+}
+;
+  flatparse = {
+  meta = {
+    sha256 = "0y6axksh2hqp8v58676a7zmwf0in7v6hmyfv8sfdx4x0acq2vjhr";
+    ver = "0.5.0.1";
+  };
+  drv = { mkDerivation, attoparsec, base, bytestring, containers, gauge
+, hspec, HUnit, integer-gmp, lib, megaparsec, parsec, primitive
+, QuickCheck, quickcheck-instances, template-haskell, utf8-string
+}:
+mkDerivation {
+  pname = "flatparse";
+  version = "0.5.0.1";
+  src = /nix/store/xkg9z7kvk4a3v2dfl0mh3sz50wl56srx-source;
+  libraryHaskellDepends = [
+    base bytestring containers integer-gmp template-haskell utf8-string
+  ];
+  testHaskellDepends = [
+    base bytestring hspec HUnit QuickCheck quickcheck-instances
+    utf8-string
+  ];
+  benchmarkHaskellDepends = [
+    attoparsec base bytestring gauge integer-gmp megaparsec parsec
+    primitive utf8-string
+  ];
+  homepage = "https://github.com/AndrasKovacs/flatparse#readme";
+  description = "High-performance parsing from strict bytestrings";
+  license = lib.licenses.mit;
+}
+;
+}
+;
+  incipit = {
+  meta = {
+    sha256 = "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
+    ver = "0.9.0.0";
+  };
+  drv = { mkDerivation, base, incipit-core, lib, polysemy-conc
+, polysemy-log, polysemy-resume, polysemy-time
+}:
+mkDerivation {
+  pname = "incipit";
+  version = "0.9.0.0";
+  src = /nix/store/rx0ji2b8zg7gh8f42qsimaw7psg35rc1-source;
+  libraryHaskellDepends = [
+    base incipit-core polysemy-conc polysemy-log polysemy-resume
+    polysemy-time
+  ];
+  homepage = "https://github.com/tek/incipit#readme";
+  description = "A Prelude for Polysemy";
+  license = "BSD-2-Clause-Patent";
+}
+;
+}
+;
+  polysemy = {
+  meta = {
+    sha256 = "01vkiqxcjvvihgg8dvws76sfg0d98z8xyvpnj3g3nz02i078xf8j";
+    ver = "1.9.1.2";
+  };
+  drv = { mkDerivation, async, base, Cabal, cabal-doctest, containers
+, doctest, first-class-families, hspec, hspec-discover
+, inspection-testing, lib, mtl, stm, syb, template-haskell
+, th-abstraction, transformers, type-errors, unagi-chan
+}:
+mkDerivation {
+  pname = "polysemy";
+  version = "1.9.1.2";
+  src = /nix/store/anfwczj25hh5zcm9y70vb1221wayi1v0-source;
+  setupHaskellDepends = [ base Cabal cabal-doctest ];
+  libraryHaskellDepends = [
+    async base containers first-class-families mtl stm syb
+    template-haskell th-abstraction transformers type-errors unagi-chan
+  ];
+  testHaskellDepends = [
+    async base containers doctest first-class-families hspec
+    hspec-discover inspection-testing mtl stm syb template-haskell
+    th-abstraction transformers type-errors unagi-chan
+  ];
+  testToolDepends = [ hspec-discover ];
+  homepage = "https://github.com/polysemy-research/polysemy#readme";
+  description = "Higher-order, low-boilerplate free monads";
+  license = lib.licenses.bsd3;
 }
 ;
 }
 ;
 };
 ghc94 = {
+  exon = {
+  meta = {
+    sha256 = "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
+    ver = "1.5.0.1";
+  };
+  drv = { mkDerivation, base, criterion, flatparse, generics-sop
+, ghc-hs-meta, hedgehog, incipit-base, lib, tasty, tasty-hedgehog
+, template-haskell
+}:
+mkDerivation {
+  pname = "exon";
+  version = "1.5.0.1";
+  src = /nix/store/ldab7gm7m9ynxwycw1pmglwmd1ph2134-source;
+  libraryHaskellDepends = [
+    base flatparse generics-sop ghc-hs-meta incipit-base
+    template-haskell
+  ];
+  testHaskellDepends = [
+    base hedgehog incipit-base tasty tasty-hedgehog template-haskell
+  ];
+  benchmarkHaskellDepends = [ base criterion incipit-base ];
+  homepage = "https://github.com/tek/exon#readme";
+  description = "Customizable quasiquote interpolation";
+  license = "BSD-2-Clause-Patent";
+}
+;
+}
+;
+  flatparse = {
+  meta = {
+    sha256 = "0y6axksh2hqp8v58676a7zmwf0in7v6hmyfv8sfdx4x0acq2vjhr";
+    ver = "0.5.0.1";
+  };
+  drv = { mkDerivation, attoparsec, base, bytestring, containers, gauge
+, hspec, HUnit, integer-gmp, lib, megaparsec, parsec, primitive
+, QuickCheck, quickcheck-instances, template-haskell, utf8-string
+}:
+mkDerivation {
+  pname = "flatparse";
+  version = "0.5.0.1";
+  src = /nix/store/xkg9z7kvk4a3v2dfl0mh3sz50wl56srx-source;
+  libraryHaskellDepends = [
+    base bytestring containers integer-gmp template-haskell utf8-string
+  ];
+  testHaskellDepends = [
+    base bytestring hspec HUnit QuickCheck quickcheck-instances
+    utf8-string
+  ];
+  benchmarkHaskellDepends = [
+    attoparsec base bytestring gauge integer-gmp megaparsec parsec
+    primitive utf8-string
+  ];
+  homepage = "https://github.com/AndrasKovacs/flatparse#readme";
+  description = "High-performance parsing from strict bytestrings";
+  license = lib.licenses.mit;
+}
+;
+}
+;
+  incipit = {
+  meta = {
+    sha256 = "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
+    ver = "0.9.0.0";
+  };
+  drv = { mkDerivation, base, incipit-core, lib, polysemy-conc
+, polysemy-log, polysemy-resume, polysemy-time
+}:
+mkDerivation {
+  pname = "incipit";
+  version = "0.9.0.0";
+  src = /nix/store/rx0ji2b8zg7gh8f42qsimaw7psg35rc1-source;
+  libraryHaskellDepends = [
+    base incipit-core polysemy-conc polysemy-log polysemy-resume
+    polysemy-time
+  ];
+  homepage = "https://github.com/tek/incipit#readme";
+  description = "A Prelude for Polysemy";
+  license = "BSD-2-Clause-Patent";
+}
+;
+}
+;
+  polysemy = {
+  meta = {
+    sha256 = "01vkiqxcjvvihgg8dvws76sfg0d98z8xyvpnj3g3nz02i078xf8j";
+    ver = "1.9.1.2";
+  };
+  drv = { mkDerivation, async, base, Cabal, cabal-doctest, containers
+, doctest, first-class-families, hspec, hspec-discover
+, inspection-testing, lib, mtl, stm, syb, template-haskell
+, th-abstraction, transformers, type-errors, unagi-chan
+}:
+mkDerivation {
+  pname = "polysemy";
+  version = "1.9.1.2";
+  src = /nix/store/anfwczj25hh5zcm9y70vb1221wayi1v0-source;
+  setupHaskellDepends = [ base Cabal cabal-doctest ];
+  libraryHaskellDepends = [
+    async base containers first-class-families mtl stm syb
+    template-haskell th-abstraction transformers type-errors unagi-chan
+  ];
+  testHaskellDepends = [
+    async base containers doctest first-class-families hspec
+    hspec-discover inspection-testing mtl stm syb template-haskell
+    th-abstraction transformers type-errors unagi-chan
+  ];
+  testToolDepends = [ hspec-discover ];
+  homepage = "https://github.com/polysemy-research/polysemy#readme";
+  description = "Higher-order, low-boilerplate free monads";
+  license = lib.licenses.bsd3;
+}
+;
+}
+;
   polysemy-resume = {
   meta = {
     sha256 = "1b9agh2qd0nrbd7cc5iabkzjb7g9lnzzy3pprvn33hr54va9p928";
@@ -491,6 +694,112 @@ mkDerivation {
 ;
 }
 ;
+  exon = {
+  meta = {
+    sha256 = "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
+    ver = "1.5.0.1";
+  };
+  drv = { mkDerivation, base, criterion, flatparse, generics-sop
+, ghc-hs-meta, hedgehog, incipit-base, lib, tasty, tasty-hedgehog
+, template-haskell
+}:
+mkDerivation {
+  pname = "exon";
+  version = "1.5.0.1";
+  src = /nix/store/ldab7gm7m9ynxwycw1pmglwmd1ph2134-source;
+  libraryHaskellDepends = [
+    base flatparse generics-sop ghc-hs-meta incipit-base
+    template-haskell
+  ];
+  testHaskellDepends = [
+    base hedgehog incipit-base tasty tasty-hedgehog template-haskell
+  ];
+  benchmarkHaskellDepends = [ base criterion incipit-base ];
+  homepage = "https://github.com/tek/exon#readme";
+  description = "Customizable quasiquote interpolation";
+  license = "BSD-2-Clause-Patent";
+}
+;
+}
+;
+  flatparse = {
+  meta = {
+    sha256 = "0y6axksh2hqp8v58676a7zmwf0in7v6hmyfv8sfdx4x0acq2vjhr";
+    ver = "0.5.0.1";
+  };
+  drv = { mkDerivation, attoparsec, base, bytestring, containers, gauge
+, hspec, HUnit, integer-gmp, lib, megaparsec, parsec, primitive
+, QuickCheck, quickcheck-instances, template-haskell, utf8-string
+}:
+mkDerivation {
+  pname = "flatparse";
+  version = "0.5.0.1";
+  src = /nix/store/xkg9z7kvk4a3v2dfl0mh3sz50wl56srx-source;
+  libraryHaskellDepends = [
+    base bytestring containers integer-gmp template-haskell utf8-string
+  ];
+  testHaskellDepends = [
+    base bytestring hspec HUnit QuickCheck quickcheck-instances
+    utf8-string
+  ];
+  benchmarkHaskellDepends = [
+    attoparsec base bytestring gauge integer-gmp megaparsec parsec
+    primitive utf8-string
+  ];
+  homepage = "https://github.com/AndrasKovacs/flatparse#readme";
+  description = "High-performance parsing from strict bytestrings";
+  license = lib.licenses.mit;
+}
+;
+}
+;
+  ghc-hs-meta = {
+  meta = {
+    sha256 = "1072k0a5svmw2f7sniq3z3n9ga4y8l5kx3qnsnbfsp4xhgcyq26i";
+    ver = "0.1.2.0";
+  };
+  drv = { mkDerivation, base, bytestring, ghc, ghc-boot, hspec, lib
+, template-haskell
+}:
+mkDerivation {
+  pname = "ghc-hs-meta";
+  version = "0.1.2.0";
+  src = /nix/store/23qd8fbqag6gmpwm9xi7fwks5byy13w6-source;
+  libraryHaskellDepends = [
+    base bytestring ghc ghc-boot template-haskell
+  ];
+  testHaskellDepends = [
+    base bytestring ghc ghc-boot hspec template-haskell
+  ];
+  description = "Translate Haskell source to Template Haskell expression";
+  license = lib.licenses.bsd3;
+}
+;
+}
+;
+  incipit = {
+  meta = {
+    sha256 = "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
+    ver = "0.9.0.0";
+  };
+  drv = { mkDerivation, base, incipit-core, lib, polysemy-conc
+, polysemy-log, polysemy-resume, polysemy-time
+}:
+mkDerivation {
+  pname = "incipit";
+  version = "0.9.0.0";
+  src = /nix/store/rx0ji2b8zg7gh8f42qsimaw7psg35rc1-source;
+  libraryHaskellDepends = [
+    base incipit-core polysemy-conc polysemy-log polysemy-resume
+    polysemy-time
+  ];
+  homepage = "https://github.com/tek/incipit#readme";
+  description = "A Prelude for Polysemy";
+  license = "BSD-2-Clause-Patent";
+}
+;
+}
+;
   polysemy = {
   meta = {
     sha256 = "01vkiqxcjvvihgg8dvws76sfg0d98z8xyvpnj3g3nz02i078xf8j";
@@ -523,39 +832,14 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-resume = {
-  meta = {
-    sha256 = "1b9agh2qd0nrbd7cc5iabkzjb7g9lnzzy3pprvn33hr54va9p928";
-    ver = "0.7.0.0";
-  };
-  drv = { mkDerivation, base, incipit-core, lib, polysemy, polysemy-plugin
-, polysemy-test, stm, tasty, transformers
-}:
-mkDerivation {
-  pname = "polysemy-resume";
-  version = "0.7.0.0";
-  src = /nix/store/2l5708xrry0mnv5znidx9affjinmpryq-source;
-  libraryHaskellDepends = [
-    base incipit-core polysemy transformers
-  ];
-  testHaskellDepends = [
-    base incipit-core polysemy polysemy-plugin polysemy-test stm tasty
-  ];
-  homepage = "https://github.com/tek/polysemy-resume#readme";
-  description = "Polysemy error tracking";
-  license = "BSD-2-Clause-Patent";
-}
-;
-}
-;
 };
 hls = {
 };
 min = {
   exon = {
   meta = {
-    sha256 = "07jawnnmpdqfnvmayv64xc4n0j9mbcgdyyqsg3dn3a3z1f4fxnfm";
-    ver = "1.5.0.0";
+    sha256 = "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
+    ver = "1.5.0.1";
   };
   drv = { mkDerivation, base, criterion, flatparse, generics-sop
 , ghc-hs-meta, hedgehog, incipit-base, lib, tasty, tasty-hedgehog
@@ -563,8 +847,8 @@ min = {
 }:
 mkDerivation {
   pname = "exon";
-  version = "1.5.0.0";
-  src = /nix/store/jh1njmdacy2200l6ixaiirgr8lbnwj7v-source;
+  version = "1.5.0.1";
+  src = /nix/store/ldab7gm7m9ynxwycw1pmglwmd1ph2134-source;
   libraryHaskellDepends = [
     base flatparse generics-sop ghc-hs-meta incipit-base
     template-haskell

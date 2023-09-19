@@ -13,17 +13,17 @@
     deps = [exon incipit];
     gen-overrides.enable = true;
 
-    overrides = {unbreak, jailbreak, ...}: {
+    overrides = {unbreak, jailbreak, hackage, ...}: {
+      exon = hackage "1.5.0.1" "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
+      incipit = hackage "0.9.0.0" "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
       polysemy-process = unbreak jailbreak;
     };
 
-    envs.ghc96.overrides = {jailbreak, ...}: {
+    envs.ghc96.overrides = {jailbreak, hackage, ...}: {
       generics-sop = jailbreak;
     };
 
     envs.dev.overrides = {hackage, ...}: {
-      exon = hackage "1.5.0.0" "07jawnnmpdqfnvmayv64xc4n0j9mbcgdyyqsg3dn3a3z1f4fxnfm";
-      incipit = hackage "0.9.0.0" "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
       polysemy-process = hackage "0.13.0.0" "0x78m8p5n3y0nfwnm9cq3qfzqnrc7x1a4xs9x63yl4gl8vnzvvq6";
       zeugma = hackage "0.9.0.0" "0gahqhbg6hskq4abg9mg9mwvzif63c22mjkxyvvvk9r3jmg9xj8l";
     };
