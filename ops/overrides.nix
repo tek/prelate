@@ -61,16 +61,16 @@ mkDerivation {
 ;
   incipit = {
   meta = {
-    sha256 = "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
-    ver = "0.9.0.0";
+    sha256 = "13qp45wry6xs54fhkcvydnz9b3nqd88sg1ypg5kpl9af4z9gqd3s";
+    ver = "0.9.0.1";
   };
   drv = { mkDerivation, base, incipit-core, lib, polysemy-conc
 , polysemy-log, polysemy-resume, polysemy-time
 }:
 mkDerivation {
   pname = "incipit";
-  version = "0.9.0.0";
-  src = /nix/store/rx0ji2b8zg7gh8f42qsimaw7psg35rc1-source;
+  version = "0.9.0.1";
+  src = /nix/store/hgi93s4kpm42yha6yba721w2x8szyd6i-source;
   libraryHaskellDepends = [
     base incipit-core polysemy-conc polysemy-log polysemy-resume
     polysemy-time
