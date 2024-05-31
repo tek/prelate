@@ -1,28 +1,43 @@
 {
   description = "A Prelude";
 
-  inputs = {
-    hix.url = "git+https://git.tryp.io/tek/hix";
-    incipit.url = "git+https://git.tryp.io/tek/incipit";
-    exon.url = "git+https://git.tryp.io/tek/exon";
-  };
+  inputs.hix.url = "git+https://git.tryp.io/tek/hix";
 
-  outputs = {hix, incipit, exon, ...}: hix.lib.pro {
-    ghcVersions = ["ghc92" "ghc94" "ghc96"];
+  outputs = {hix, ...}: let
+    overrides = {jailbreak, unbreak, ...}: {
+      incipit = jailbreak;
+      polysemy-test = jailbreak unbreak;
+      polysemy-conc = jailbreak;
+      polysemy-log = jailbreak;
+      polysemy-process = unbreak;
+    };
+  in hix.lib.pro {
+    ghcVersions = ["ghc94" "ghc96" "ghc98"];
+    compat.versions = ["ghc96"];
     hackage.versionFile = "ops/version.nix";
-    deps = [exon incipit];
     gen-overrides.enable = true;
-
-    overrides = {hackage, ...}: {
-      exon = hackage "1.5.0.1" "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
-      incipit = hackage "0.9.0.0" "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
+    managed = {
+      enable = true;
+      lower.enable = true;
+      envs.solverOverrides = overrides;
+      latest.compiler = "ghc98";
     };
 
-    envs.dev.overrides = {hackage, ...}: {
-      polysemy-process = hackage "0.13.0.1" "0jzcr0vvmnmpvyyk062lq1k4xcyph9zn6b80wwn6h484qjpwpqcd";
-      incipit = hackage "0.9.0.1" "13qp45wry6xs54fhkcvydnz9b3nqd88sg1ypg5kpl9af4z9gqd3s";
-      zeugma = hackage "0.9.0.1" "1clsd2c26cp60kajf4aw8wydnmvgr4blka8yzysi3gzd8ky32ck1";
-    };
+#     inherit overrides;
+
+    envs.latest = { inherit overrides; };
+    envs.lower = { inherit overrides; };
+
+    # overrides = {hackage, ...}: {
+    #   exon = hackage "1.5.0.1" "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
+    #   incipit = hackage "0.9.0.0" "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
+    # };
+
+    # envs.dev.overrides = {hackage, ...}: {
+    #   polysemy-process = hackage "0.13.0.1" "0jzcr0vvmnmpvyyk062lq1k4xcyph9zn6b80wwn6h484qjpwpqcd";
+    #   incipit = hackage "0.9.0.1" "13qp45wry6xs54fhkcvydnz9b3nqd88sg1ypg5kpl9af4z9gqd3s";
+    #   zeugma = hackage "0.9.0.1" "1clsd2c26cp60kajf4aw8wydnmvgr4blka8yzysi3gzd8ky32ck1";
+    # };
 
     cabal = {
       license = "BSD-2-Clause-Patent";
