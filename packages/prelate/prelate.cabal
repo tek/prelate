@@ -125,19 +125,19 @@ library
       NoFieldSelectors
   ghc-options: -Wall -Widentities -Wincomplete-uni-patterns -Wmissing-deriving-strategies -Wredundant-constraints -Wunused-type-patterns -Wunused-packages
   build-depends:
-      aeson
-    , base
-    , exon
-    , extra
-    , generic-lens
-    , incipit
-    , microlens
-    , microlens-ghc
-    , polysemy-chronos
-    , polysemy-conc
-    , polysemy-log
-    , polysemy-process
-    , polysemy-resume
-    , polysemy-time
-    , template-haskell
+      aeson >=2.1.0.0
+    , base >=4.17.2.1
+    , exon >=1.4.0.0
+    , extra >=1.7.9
+    , generic-lens >=2.2.1.0
+    , incipit >=0.7.0.0
+    , microlens >=0.4.12.0
+    , microlens-ghc >=0.4.13.1
+    , polysemy-chronos >=0.5.0.0
+    , polysemy-conc >=0.12.1.0
+    , polysemy-log >=0.9.0.0
+    , polysemy-process >=0.12.0.0
+    , polysemy-resume >=0.7.0.0
+    , polysemy-time >=0.6.0.0
+    , template-haskell >=2.19.0.0
   default-language: GHC2021
