@@ -7,7 +7,7 @@
       };
       base = {
         lower = "4.17.2.1";
-        upper = "4.20";
+        upper = "4.21";
       };
       exon = {
         lower = "1.4.0.0";
@@ -15,7 +15,7 @@
       };
       extra = {
         lower = "1.7.9";
-        upper = "1.8";
+        upper = "1.9";
       };
       generic-lens = {
         lower = "2.2.1.0";
@@ -35,11 +35,11 @@
       };
       polysemy-chronos = {
         lower = "0.5.0.0";
-        upper = "0.7";
+        upper = "0.8";
       };
       polysemy-conc = {
         lower = "0.12.1.0";
-        upper = "0.14";
+        upper = "0.15";
       };
       polysemy-log = {
         lower = "0.9.0.0";
@@ -47,39 +47,39 @@
       };
       polysemy-process = {
         lower = "0.12.0.0";
-        upper = "0.14";
+        upper = "0.15";
       };
       polysemy-resume = {
         lower = "0.7.0.0";
-        upper = "0.9";
+        upper = "0.10";
       };
       polysemy-time = {
         lower = "0.6.0.0";
-        upper = "0.7";
+        upper = "0.8";
       };
       template-haskell = {
         lower = "2.19.0.0";
-        upper = "2.22";
+        upper = "2.23";
       };
     };
   };
   versions = {
     latest = {
-      aeson = "2.2.1.0";
-      base = "4.19.1.0";
-      exon = "1.7.0.0";
-      extra = "1.7.16";
+      aeson = "2.2.3.0";
+      base = "4.20.0.0";
+      exon = "1.7.2.0";
+      extra = "1.8";
       generic-lens = "2.2.2.0";
-      incipit = "0.10.0.0";
-      microlens = "0.4.13.1";
-      microlens-ghc = "0.4.14.3";
-      polysemy-chronos = "0.6.0.2";
-      polysemy-conc = "0.13.0.1";
-      polysemy-log = "0.11.0.0";
-      polysemy-process = "0.13.0.1";
-      polysemy-resume = "0.8.0.1";
-      polysemy-time = "0.6.0.2";
-      template-haskell = "2.21.0.0";
+      incipit = "0.10.0.1";
+      microlens = "0.4.14.0";
+      microlens-ghc = "0.4.15.1";
+      polysemy-chronos = "0.7.0.1";
+      polysemy-conc = "0.14.1.1";
+      polysemy-log = "0.11.1.0";
+      polysemy-process = "0.14.1.1";
+      polysemy-resume = "0.9.0.1";
+      polysemy-time = "0.7.0.1";
+      template-haskell = "2.22.0.0";
     };
     lower = {
       aeson = "2.1.0.0";
@@ -120,24 +120,48 @@
   overrides = {
     latest = {
       exon = {
-        version = "1.7.0.0";
-        hash = "142i8ka6b16ydllhhb2305ml3hij66h6y555fp6cvc82166kdrhb";
+        version = "1.7.2.0";
+        hash = "0hg271cvjqm4ps75qpnirq9nvjwpwb03mcbn1a364jrysrj6bg3b";
       };
       extra = {
-        version = "1.7.16";
-        hash = "0y27q0zas66qbgvjga0w8dmfjcs0kcn9nwps17iyd60ij3yqivhj";
+        version = "1.8";
+        hash = "0cnk9ncn0k7fv24g0v3rhqd3z9zcz9cgz0rf59vs6v9kappbidmx";
       };
       incipit = {
-        version = "0.10.0.0";
-        hash = "1r3y2wp8wz1ii28a6wb76z6w3sgiah158kwsadrr13w6iryhq047";
+        version = "0.10.0.1";
+        hash = "0vr1balwy6v9l15pjlyy372w0scli1wcl6395jqdkjncqm3ymdin";
+      };
+      microlens = {
+        version = "0.4.14.0";
+        hash = "08kqq6fvnwh1ngj29anknpnj0c3vz5i09vszd1772gbp5yvhjsls";
       };
       microlens-ghc = {
-        version = "0.4.14.3";
-        hash = "0pivw9yrsbfand99kqx8rmll0653k2fzymd6y8av44ky4j3pydga";
+        version = "0.4.15.1";
+        hash = "1dgpyy6gh0bld190rgh56a8wid4ibgw0ix77wd98giw84zrmkazb";
+      };
+      polysemy-chronos = {
+        version = "0.7.0.1";
+        hash = "1gc17p8xj77y0b8hjkbmsgw2ih5396mzlc6cjw5jmrviigsw726k";
+      };
+      polysemy-conc = {
+        version = "0.14.1.1";
+        hash = "1xli6ja9f7qx2k9956lw4h9y5ywdglhgw769afxw9d4w9avclx28";
       };
       polysemy-log = {
-        version = "0.11.0.0";
-        hash = "1phzwj2ig0vx1anscg3qv53ysa0f7gks37pc8gfkh2aws3qp6cda";
+        version = "0.11.1.0";
+        hash = "09jdy3jzry31knaydjqka0mj8jwscdys5wq2xij21lxbxr5msy1m";
+      };
+      polysemy-process = {
+        version = "0.14.1.1";
+        hash = "1qvbkldhai77r2pr7wbznsb9pr0pawynmvcd31v3v8jpki3xaycr";
+      };
+      polysemy-resume = {
+        version = "0.9.0.1";
+        hash = "1i2bnpd3l357jhln8xl92z65b3mskz9y8z1xlha4lm0m855qyk15";
+      };
+      polysemy-time = {
+        version = "0.7.0.1";
+        hash = "0cw39gvmr9rgh3hc0gd55wimm4lxzw9nyrczixk42nw170bpls40";
       };
     };
     lower = {

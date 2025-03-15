@@ -4,6 +4,7 @@
   inputs.hix.url = "git+https://git.tryp.io/tek/hix";
 
   outputs = {hix, ...}: let
+
     overrides = {jailbreak, unbreak, ...}: {
       incipit = jailbreak;
       polysemy-test = jailbreak unbreak;
@@ -11,45 +12,30 @@
       polysemy-log = jailbreak;
       polysemy-process = unbreak;
     };
+
+    overrides910 = {hackage, jailbreak, unbreak, ...}: {
+      byte-order = jailbreak;
+      bytebuild = jailbreak;
+      chronos = jailbreak;
+      co-log = jailbreak;
+      co-log-concurrent = jailbreak;
+      exon = hackage "1.7.1.0" "16vf84nnpivxw4a46g7jsy2hg4lpla7grkv3gp8nd69zlv43777l";
+      incipit-base = jailbreak;
+      incipit-core = jailbreak;
+      incipit = jailbreak;
+      polysemy-conc = jailbreak;
+      polysemy-chronos = jailbreak;
+      polysemy-log = jailbreak;
+      polysemy-process = jailbreak unbreak;
+      polysemy-resume = jailbreak;
+      polysemy-test = jailbreak unbreak;
+      polysemy-time = jailbreak;
+    };
+
   in hix.lib.pro {
-    ghcVersions = ["ghc94" "ghc96" "ghc98"];
-    compat.versions = ["ghc96"];
+    ghcVersions = ["ghc94" "ghc96" "ghc98" "ghc910"];
     hackage.versionFile = "ops/version.nix";
     gen-overrides.enable = true;
-    managed = {
-      enable = true;
-      lower.enable = true;
-      envs.solverOverrides = overrides;
-      latest.compiler = "ghc98";
-    };
-
-    inherit overrides;
-
-    envs.latest = { inherit overrides; };
-    envs.lower = { inherit overrides; };
-
-    # overrides = {hackage, ...}: {
-    #   exon = hackage "1.5.0.1" "1bhv6bpc91vhpwqwj0ar4b004bh6vj4anwkkdh9x9z02p6ajcx44";
-    #   incipit = hackage "0.9.0.0" "1iqwy0qj178zh8bxz7xkj3h6v9ijkdxm0k66j0gxi4x0kw2ncga0";
-    # };
-
-    # envs.dev.overrides = {hackage, ...}: {
-    #   polysemy-process = hackage "0.13.0.1" "0jzcr0vvmnmpvyyk062lq1k4xcyph9zn6b80wwn6h484qjpwpqcd";
-    #   incipit = hackage "0.9.0.1" "13qp45wry6xs54fhkcvydnz9b3nqd88sg1ypg5kpl9af4z9gqd3s";
-    #   zeugma = hackage "0.9.0.1" "1clsd2c26cp60kajf4aw8wydnmvgr4blka8yzysi3gzd8ky32ck1";
-    # };
-
-    cabal = {
-      license = "BSD-2-Clause-Patent";
-      license-file = "LICENSE";
-      author = "Torsten Schmits";
-      meta = {
-        maintainer = "hackage@tryp.io";
-        category = "Prelude";
-        github = "tek/prelate";
-        extra-source-files = ["readme.md"];
-      };
-    };
 
     packages.prelate = {
       src = ./packages/prelate;
@@ -122,6 +108,45 @@
           "Time"
         ];
       };
+
+    };
+
+    cabal = {
+      license = "BSD-2-Clause-Patent";
+      license-file = "LICENSE";
+      author = "Torsten Schmits";
+      meta = {
+        maintainer = "hackage@tryp.io";
+        category = "Prelude";
+        github = "tek/prelate";
+        extra-source-files = ["readme.md"];
+      };
+    };
+
+    managed = {
+      enable = true;
+      lower.enable = true;
+      envs.solverOverrides = overrides910;
+      latest.compiler = "ghc910";
+    };
+
+    inherit overrides;
+
+    envs = {
+
+      latest.overrides = {jailbreak, unbreak, ...}: {
+        incipit-base = jailbreak;
+        incipit-core = jailbreak;
+        bytebuild = jailbreak;
+        chronos = jailbreak;
+        co-log = jailbreak;
+        co-log-concurrent = jailbreak;
+        polysemy-test = jailbreak unbreak;
+      };
+
+      ghc910.overrides = overrides910;
+
+      lower.globalOverrides = true;
 
     };
 

@@ -1,4 +1,4 @@
-{-# language NoImplicitPrelude #-}
+{-# language NoImplicitPrelude, CPP #-}
 {-# options_haddock prune #-}
 
 module Prelate.App (
@@ -11,13 +11,19 @@ module Prelate.App (
   ExitErrorMessage (exitErrorMessage),
 ) where
 
-import Conc (ConcStack, Critical, interpretCritical, interpretInterrupt)
+import Conc (ConcStack, Critical, interpretCritical)
 import qualified Data.Text.IO as Text
 import Incipit
 import Log (Severity (Info), interpretLogStderrLevelConc)
 import Polysemy.Chronos (ChronosTime, interpretTimeChronos)
 import System.Exit (exitFailure)
 import System.IO (stderr)
+
+#if MIN_VERSION_polysemy_conc(0,14,0)
+import Polysemy.Process (Interrupt, interpretInterrupt)
+#else
+import Conc (interpretInterrupt)
+#endif
 
 -- | The default stack for a Prelate app.
 type AppStack =
