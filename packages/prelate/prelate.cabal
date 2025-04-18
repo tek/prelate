@@ -125,7 +125,7 @@ library
       NoFieldSelectors
   ghc-options: -Wall -Widentities -Wincomplete-uni-patterns -Wmissing-deriving-strategies -Wredundant-constraints -Wunused-type-patterns -Wunused-packages
   build-depends:
-      aeson >=2.1.0.0 && <2.3
+      aeson >=2.1.2.1 && <2.3
     , base >=4.17.2.1 && <4.21
     , exon >=1.4.0.0 && <1.8
     , extra >=1.7.9 && <1.9

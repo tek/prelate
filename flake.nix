@@ -13,25 +13,6 @@
       polysemy-process = unbreak;
     };
 
-    overrides910 = {hackage, jailbreak, unbreak, ...}: {
-      byte-order = jailbreak;
-      bytebuild = jailbreak;
-      chronos = jailbreak;
-      co-log = jailbreak;
-      co-log-concurrent = jailbreak;
-      exon = hackage "1.7.1.0" "16vf84nnpivxw4a46g7jsy2hg4lpla7grkv3gp8nd69zlv43777l";
-      incipit-base = jailbreak;
-      incipit-core = jailbreak;
-      incipit = jailbreak;
-      polysemy-conc = jailbreak;
-      polysemy-chronos = jailbreak;
-      polysemy-log = jailbreak;
-      polysemy-process = jailbreak unbreak;
-      polysemy-resume = jailbreak;
-      polysemy-test = jailbreak unbreak;
-      polysemy-time = jailbreak;
-    };
-
   in hix.lib.pro {
     ghcVersions = ["ghc94" "ghc96" "ghc98" "ghc910"];
     hackage.versionFile = "ops/version.nix";
@@ -126,7 +107,6 @@
     managed = {
       enable = true;
       lower.enable = true;
-      envs.solverOverrides = overrides910;
       latest.compiler = "ghc910";
     };
 
@@ -134,20 +114,28 @@
 
     envs = {
 
-      latest.overrides = {jailbreak, unbreak, ...}: {
-        incipit-base = jailbreak;
-        incipit-core = jailbreak;
+      ghc910.overrides = {hackage, jailbreak, unbreak, ...}: {
+        byte-order = jailbreak;
         bytebuild = jailbreak;
         chronos = jailbreak;
-        co-log = jailbreak;
-        co-log-concurrent = jailbreak;
+        exon = hackage "1.7.1.0" "16vf84nnpivxw4a46g7jsy2hg4lpla7grkv3gp8nd69zlv43777l";
+        incipit-base = jailbreak;
+        incipit-core = jailbreak;
+        incipit = jailbreak;
+        polysemy-conc = jailbreak;
+        polysemy-chronos = jailbreak;
+        polysemy-log = jailbreak;
+        polysemy-process = jailbreak unbreak;
+        polysemy-resume = jailbreak;
         polysemy-test = jailbreak unbreak;
+        polysemy-time = jailbreak;
       };
 
-      ghc910.overrides = overrides910;
+    };
 
-      lower.globalOverrides = true;
-
+    internal.hixCli = {
+      commit = "63b6808606a755fdc5b7657020e2e7798aa33eb7";
+      sha256 = "1872sx4p7l76frf8svypf1kyalf0qscki2f6s3sdm4l3hwyg5rs4";
     };
 
   };
