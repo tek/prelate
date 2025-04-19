@@ -40,9 +40,82 @@ hix-build-tools = {
 hls = {
 };
 latest = {
+  bytebuild = {
+  meta = {
+    sha256 = "0r14dmwywpr91qrnck3lb269hn8nmfmfwww11yglggn6fmjv6ks7";
+    url = "https://hackage.haskell.org";
+    ver = "0.3.16.2";
+  };
+  drv = { mkDerivation, base, byteslice, bytestring, gauge
+, haskell-src-meta, integer-logarithms, lib, natural-arithmetic
+, primitive, primitive-offset, QuickCheck, quickcheck-instances
+, run-st, tasty, tasty-hunit, tasty-quickcheck, template-haskell
+, text, text-short, wide-word, zigzag
+}:
+mkDerivation {
+  pname = "bytebuild";
+  version = "0.3.16.2";
+  src = /nix/store/ix1p89jz53pyk7jr4xsli40z05hx31jr-source;
+  libraryHaskellDepends = [
+    base byteslice bytestring haskell-src-meta integer-logarithms
+    natural-arithmetic primitive primitive-offset run-st
+    template-haskell text text-short wide-word zigzag
+  ];
+  testHaskellDepends = [
+    base byteslice bytestring natural-arithmetic primitive QuickCheck
+    quickcheck-instances tasty tasty-hunit tasty-quickcheck text
+    text-short wide-word
+  ];
+  benchmarkHaskellDepends = [
+    base byteslice gauge natural-arithmetic primitive text-short
+  ];
+  homepage = "https://github.com/byteverse/bytebuild";
+  description = "Build byte arrays";
+  license = lib.licenses.bsd3;
+}
+;
+}
+;
+  chronos = {
+  meta = {
+    sha256 = "037h68ji0f362irn9n9qwvr7d1ff6inpbc8d5wa4d63223713k9m";
+    url = "https://hackage.haskell.org";
+    ver = "1.1.6.1";
+  };
+  drv = { mkDerivation, aeson, attoparsec, base, bytebuild, byteslice
+, bytesmith, bytestring, criterion, deepseq, hashable, HUnit, lib
+, natural-arithmetic, old-locale, primitive, QuickCheck
+, test-framework, test-framework-hunit, test-framework-quickcheck2
+, text, text-short, thyme, time, torsor, vector
+}:
+mkDerivation {
+  pname = "chronos";
+  version = "1.1.6.1";
+  src = /nix/store/94b0vp25iyp98kyinilv23im02h4xkpx-source;
+  libraryHaskellDepends = [
+    aeson attoparsec base bytebuild byteslice bytesmith bytestring
+    deepseq hashable natural-arithmetic primitive text text-short
+    torsor vector
+  ];
+  testHaskellDepends = [
+    aeson attoparsec base bytestring HUnit QuickCheck test-framework
+    test-framework-hunit test-framework-quickcheck2 text torsor
+  ];
+  benchmarkHaskellDepends = [
+    attoparsec base bytestring criterion deepseq old-locale QuickCheck
+    text text-short thyme time
+  ];
+  homepage = "https://github.com/byteverse/chronos";
+  description = "A high-performance time library";
+  license = lib.licenses.bsd3;
+}
+;
+}
+;
   exon = {
   meta = {
     sha256 = "0hg271cvjqm4ps75qpnirq9nvjwpwb03mcbn1a364jrysrj6bg3b";
+    url = "https://hackage.haskell.org";
     ver = "1.7.2.0";
   };
   drv = { mkDerivation, base, criterion, ghc, hedgehog, incipit-base, lib
@@ -69,6 +142,7 @@ mkDerivation {
   extra = {
   meta = {
     sha256 = "0cnk9ncn0k7fv24g0v3rhqd3z9zcz9cgz0rf59vs6v9kappbidmx";
+    url = "https://hackage.haskell.org";
     ver = "1.8";
   };
   drv = { mkDerivation, base, clock, directory, filepath, lib, process
@@ -94,6 +168,7 @@ mkDerivation {
   incipit = {
   meta = {
     sha256 = "0vr1balwy6v9l15pjlyy372w0scli1wcl6395jqdkjncqm3ymdin";
+    url = "https://hackage.haskell.org";
     ver = "0.10.0.1";
   };
   drv = { mkDerivation, base, incipit-core, lib, polysemy-conc
@@ -114,9 +189,52 @@ mkDerivation {
 ;
 }
 ;
+  incipit-base = {
+  meta = {
+    sha256 = "0hkqnqpdw8rvg4xzslw9sp3684ggyk9n4hr0lczwm8b0pzakzs0l";
+    url = "https://hackage.haskell.org";
+    ver = "0.5.1.0";
+  };
+  drv = { mkDerivation, base, bytestring, containers, data-default, lib
+, stm, text
+}:
+mkDerivation {
+  pname = "incipit-base";
+  version = "0.5.1.0";
+  src = /nix/store/fs6gal70xx982m6ssnb49w7w8fc8alps-source;
+  libraryHaskellDepends = [
+    base bytestring containers data-default stm text
+  ];
+  homepage = "https://github.com/tek/incipit-core#readme";
+  description = "A Prelude for Polysemy – Base Reexports";
+  license = "BSD-2-Clause-Patent";
+}
+;
+}
+;
+  incipit-core = {
+  meta = {
+    sha256 = "04lyzycvqxyjqcd703cd33lnlk5va9wj3czpsybah0ybydnrwabd";
+    url = "https://hackage.haskell.org";
+    ver = "0.5.1.0";
+  };
+  drv = { mkDerivation, base, incipit-base, lib, polysemy }:
+mkDerivation {
+  pname = "incipit-core";
+  version = "0.5.1.0";
+  src = /nix/store/1934h3k3jsxg36y3bsbsn30l9b40jch6-source;
+  libraryHaskellDepends = [ base incipit-base polysemy ];
+  homepage = "https://github.com/tek/incipit-core#readme";
+  description = "A Prelude for Polysemy";
+  license = "BSD-2-Clause-Patent";
+}
+;
+}
+;
   microlens = {
   meta = {
     sha256 = "08kqq6fvnwh1ngj29anknpnj0c3vz5i09vszd1772gbp5yvhjsls";
+    url = "https://hackage.haskell.org";
     ver = "0.4.14.0";
   };
   drv = { mkDerivation, base, lib }:
@@ -135,6 +253,7 @@ mkDerivation {
   microlens-ghc = {
   meta = {
     sha256 = "1dgpyy6gh0bld190rgh56a8wid4ibgw0ix77wd98giw84zrmkazb";
+    url = "https://hackage.haskell.org";
     ver = "0.4.15.1";
   };
   drv = { mkDerivation, array, base, bytestring, containers, lib, microlens
@@ -157,6 +276,7 @@ mkDerivation {
   polysemy-chronos = {
   meta = {
     sha256 = "1gc17p8xj77y0b8hjkbmsgw2ih5396mzlc6cjw5jmrviigsw726k";
+    url = "https://hackage.haskell.org";
     ver = "0.7.0.1";
   };
   drv = { mkDerivation, base, chronos, incipit-core, lib, polysemy-test
@@ -182,6 +302,7 @@ mkDerivation {
   polysemy-conc = {
   meta = {
     sha256 = "1xli6ja9f7qx2k9956lw4h9y5ywdglhgw769afxw9d4w9avclx28";
+    url = "https://hackage.haskell.org";
     ver = "0.14.1.1";
   };
   drv = { mkDerivation, async, base, hedgehog, incipit-core, lib, polysemy
@@ -210,6 +331,7 @@ mkDerivation {
   polysemy-log = {
   meta = {
     sha256 = "09jdy3jzry31knaydjqka0mj8jwscdys5wq2xij21lxbxr5msy1m";
+    url = "https://hackage.haskell.org";
     ver = "0.11.1.0";
   };
   drv = { mkDerivation, ansi-terminal, async, base, incipit-core, lib
@@ -241,6 +363,7 @@ mkDerivation {
   polysemy-process = {
   meta = {
     sha256 = "1qvbkldhai77r2pr7wbznsb9pr0pawynmvcd31v3v8jpki3xaycr";
+    url = "https://hackage.haskell.org";
     ver = "0.14.1.1";
   };
   drv = { mkDerivation, async, base, hedgehog, incipit-core, lib, path
@@ -273,6 +396,7 @@ mkDerivation {
   polysemy-resume = {
   meta = {
     sha256 = "1i2bnpd3l357jhln8xl92z65b3mskz9y8z1xlha4lm0m855qyk15";
+    url = "https://hackage.haskell.org";
     ver = "0.9.0.1";
   };
   drv = { mkDerivation, base, incipit-core, lib, polysemy, polysemy-plugin
@@ -298,6 +422,7 @@ mkDerivation {
   polysemy-time = {
   meta = {
     sha256 = "0cw39gvmr9rgh3hc0gd55wimm4lxzw9nyrczixk42nw170bpls40";
+    url = "https://hackage.haskell.org";
     ver = "0.7.0.1";
   };
   drv = { mkDerivation, aeson, base, incipit-core, lib, polysemy-test
