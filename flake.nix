@@ -3,19 +3,9 @@
 
   inputs.hix.url = "git+https://git.tryp.io/tek/hix";
 
-  outputs = {hix, ...}: let
-
-    overrides = {jailbreak, unbreak, ...}: {
-      incipit = jailbreak;
-      polysemy-test = jailbreak unbreak;
-      polysemy-conc = jailbreak;
-      polysemy-log = jailbreak;
-      polysemy-process = unbreak;
-    };
-
-  in hix.lib.pro {
-    ghcVersions = ["ghc94" "ghc96" "ghc98" "ghc910"];
-    hackage.versionFile = "ops/version.nix";
+  outputs = {hix, ...}: hix.lib.pro {
+    compiler = "ghc912";
+    ghcVersions = ["ghc98" "ghc910" "ghc912"];
     gen-overrides.enable = true;
 
     packages.prelate = {
@@ -103,40 +93,52 @@
         github = "tek/prelate";
         extra-source-files = ["readme.md"];
       };
+      language = "GHC2021";
     };
 
     managed = {
       enable = true;
       lower.enable = true;
-      latest.compiler = "ghc910";
+      latest.compiler = "ghc912";
+      lower.compiler = "ghc98";
     };
 
-    inherit overrides;
+    release.versionFile = "ops/version.nix";
+    hackage.repos."hackage.haskell.org".user = "tek";
 
     envs = {
 
-      ghc910.overrides = {hackage, jailbreak, unbreak, ...}: {
-        byte-order = jailbreak;
-        bytebuild = jailbreak;
-        chronos = jailbreak;
-        exon = hackage "1.7.1.0" "16vf84nnpivxw4a46g7jsy2hg4lpla7grkv3gp8nd69zlv43777l";
-        incipit-base = jailbreak;
-        incipit-core = jailbreak;
+      dev.overrides = {jailbreak, ...}: {
         incipit = jailbreak;
-        polysemy-conc = jailbreak;
         polysemy-chronos = jailbreak;
+        polysemy-conc = jailbreak;
         polysemy-log = jailbreak;
-        polysemy-process = jailbreak unbreak;
+        polysemy-process = jailbreak;
         polysemy-resume = jailbreak;
-        polysemy-test = jailbreak unbreak;
+        polysemy-test = jailbreak;
         polysemy-time = jailbreak;
+      };
+
+      ghc912.overrides = {jailbreak, ...}: {
+        incipit = jailbreak;
+        polysemy-chronos = jailbreak;
+        polysemy-conc = jailbreak;
+        polysemy-log = jailbreak;
+        polysemy-process = jailbreak;
+        polysemy-resume = jailbreak;
+        polysemy-test = jailbreak;
+        polysemy-time = jailbreak;
+      };
+
+      ghc98.overrides = {jailbreak, hackage, ...}: {
+        chronos = jailbreak (hackage "1.1.6.2" "1pbfp25py682d17visa4i9rjxmiim8aykrgs7nv2q9anajv88kdx");
       };
 
     };
 
     internal.hixCli = {
-      commit = "63b6808606a755fdc5b7657020e2e7798aa33eb7";
-      sha256 = "1872sx4p7l76frf8svypf1kyalf0qscki2f6s3sdm4l3hwyg5rs4";
+      commit = "3d685c06f2689aaf907b427aa61018aa2ef6f0e8";
+      sha256 = "07qyncxvw11k3rkf43nfpa8zql88hxc8w6p0j47bhi9whlk0y6s2";
     };
 
   };
