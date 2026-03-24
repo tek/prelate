@@ -149,12 +149,6 @@
         hash = "05im3y27lhjjy6hi0i85rlqsan510fmp63lqfwg18cnlzn0yvf81";
         repo = "hackage.haskell.org";
       };
-      incipit = {
-        version = "0.10.0.1";
-        hash = "0vr1balwy6v9l15pjlyy372w0scli1wcl6395jqdkjncqm3ymdin";
-        repo = "hackage.haskell.org";
-        revision = true;
-      };
       microlens = {
         version = "0.5.0.0";
         hash = "1bkk0381q86qnbdpd2qq2in6a313isvirq51jyhz4hpxk17a04ap";
@@ -571,5 +565,6 @@
       version = "0.9.0.0";
     };
   };
+  packages = {};
   resolving = false;
 }

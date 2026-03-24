@@ -106,18 +106,7 @@
     release.versionFile = "ops/version.nix";
     hackage.repos."hackage.haskell.org".user = "tek";
 
-    envs = {
-
-      dev.overrides = {jailbreak, ...}: {
-        incipit = jailbreak;
-        polysemy-chronos = jailbreak;
-        polysemy-conc = jailbreak;
-        polysemy-log = jailbreak;
-        polysemy-process = jailbreak;
-        polysemy-resume = jailbreak;
-        polysemy-test = jailbreak;
-        polysemy-time = jailbreak;
-      };
+    package-sets = {
 
       ghc912.overrides = {jailbreak, ...}: {
         incipit = jailbreak;
@@ -135,6 +124,8 @@
       };
 
     };
+
+    envs.dev.package-set.extends = "ghc912";
 
     internal.hixCli = {
       commit = "3d685c06f2689aaf907b427aa61018aa2ef6f0e8";

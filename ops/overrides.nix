@@ -1,12 +1,10 @@
 {
-dev = {
-};
-ghc910 = {
-};
-ghc912 = {
-};
-ghc98 = {
-  chronos = {
+  _meta = {
+    protocol = "2";
+  };
+  ghc98-extends-ghc98 = {
+    overrides = {
+      chronos = {
   meta = {
     sha256 = "1pbfp25py682d17visa4i9rjxmiim8aykrgs7nv2q9anajv88kdx";
     ver = "1.1.6.2";
@@ -41,13 +39,11 @@ mkDerivation {
 ;
 }
 ;
-};
-hix-build-tools = {
-};
-hls = {
-};
-latest = {
-  bytebuild = {
+    };
+  };
+  latest = {
+    extraOverrides = {
+      bytebuild = {
   meta = {
     sha256 = "0r14dmwywpr91qrnck3lb269hn8nmfmfwww11yglggn6fmjv6ks7";
     url = "https://hackage.haskell.org";
@@ -83,7 +79,7 @@ mkDerivation {
 ;
 }
 ;
-  chronos = {
+      chronos = {
   meta = {
     sha256 = "037h68ji0f362irn9n9qwvr7d1ff6inpbc8d5wa4d63223713k9m";
     url = "https://hackage.haskell.org";
@@ -119,7 +115,7 @@ mkDerivation {
 ;
 }
 ;
-  exon = {
+      exon = {
   meta = {
     sha256 = "0hg271cvjqm4ps75qpnirq9nvjwpwb03mcbn1a364jrysrj6bg3b";
     url = "https://hackage.haskell.org";
@@ -146,7 +142,7 @@ mkDerivation {
 ;
 }
 ;
-  extra = {
+      extra = {
   meta = {
     sha256 = "0q3hyffi11dazq9n25r508spvmblx21wipfw10hfkxcazv5l1pg2";
     url = "https://hackage.haskell.org";
@@ -172,7 +168,7 @@ mkDerivation {
 ;
 }
 ;
-  generic-lens = {
+      generic-lens = {
   meta = {
     sha256 = "06q0ghaj90hqp0chb3z5qzr3cx8ypanjk24d4wnb1b7b8s13rhsp";
     url = "https://hackage.haskell.org";
@@ -196,7 +192,7 @@ mkDerivation {
 ;
 }
 ;
-  generic-lens-core = {
+      generic-lens-core = {
   meta = {
     sha256 = "05im3y27lhjjy6hi0i85rlqsan510fmp63lqfwg18cnlzn0yvf81";
     url = "https://hackage.haskell.org";
@@ -215,31 +211,7 @@ mkDerivation {
 ;
 }
 ;
-  incipit = {
-  meta = {
-    sha256 = "0vr1balwy6v9l15pjlyy372w0scli1wcl6395jqdkjncqm3ymdin";
-    url = "https://hackage.haskell.org";
-    ver = "0.10.0.1";
-  };
-  drv = { mkDerivation, base, incipit-core, lib, polysemy-conc
-, polysemy-log, polysemy-resume, polysemy-time
-}:
-mkDerivation {
-  pname = "incipit";
-  version = "0.10.0.1";
-  src = /nix/store/y9k0f8365246qsr7ina7c2v88sg90zqd-source;
-  libraryHaskellDepends = [
-    base incipit-core polysemy-conc polysemy-log polysemy-resume
-    polysemy-time
-  ];
-  homepage = "https://github.com/tek/incipit#readme";
-  description = "A Prelude for Polysemy";
-  license = "BSD-2-Clause-Patent";
-}
-;
-}
-;
-  microlens = {
+      microlens = {
   meta = {
     sha256 = "1bkk0381q86qnbdpd2qq2in6a313isvirq51jyhz4hpxk17a04ap";
     url = "https://hackage.haskell.org";
@@ -258,7 +230,7 @@ mkDerivation {
 ;
 }
 ;
-  microlens-ghc = {
+      microlens-ghc = {
   meta = {
     sha256 = "0x7qlfsrjlf6yixazqb9qzrzx5rylpna0rxp2bwbf6xpg44bqmck";
     url = "https://hackage.haskell.org";
@@ -281,7 +253,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-chronos = {
+      polysemy-chronos = {
   meta = {
     sha256 = "1gc17p8xj77y0b8hjkbmsgw2ih5396mzlc6cjw5jmrviigsw726k";
     url = "https://hackage.haskell.org";
@@ -307,7 +279,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-conc = {
+      polysemy-conc = {
   meta = {
     sha256 = "1xli6ja9f7qx2k9956lw4h9y5ywdglhgw769afxw9d4w9avclx28";
     url = "https://hackage.haskell.org";
@@ -336,7 +308,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-log = {
+      polysemy-log = {
   meta = {
     sha256 = "09jdy3jzry31knaydjqka0mj8jwscdys5wq2xij21lxbxr5msy1m";
     url = "https://hackage.haskell.org";
@@ -368,7 +340,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-process = {
+      polysemy-process = {
   meta = {
     sha256 = "1qvbkldhai77r2pr7wbznsb9pr0pawynmvcd31v3v8jpki3xaycr";
     url = "https://hackage.haskell.org";
@@ -401,7 +373,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-resume = {
+      polysemy-resume = {
   meta = {
     sha256 = "1i2bnpd3l357jhln8xl92z65b3mskz9y8z1xlha4lm0m855qyk15";
     url = "https://hackage.haskell.org";
@@ -427,7 +399,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-time = {
+      polysemy-time = {
   meta = {
     sha256 = "0cw39gvmr9rgh3hc0gd55wimm4lxzw9nyrczixk42nw170bpls40";
     url = "https://hackage.haskell.org";
@@ -453,9 +425,11 @@ mkDerivation {
 ;
 }
 ;
-};
-lower = {
-  QuickCheck = {
+    };
+  };
+  lower = {
+    extraOverrides = {
+      QuickCheck = {
   meta = {
     sha256 = "18451rdmih1jkrsrckdcix71zqihc4h2caic7qzizxjg4hqpapji";
     url = "https://hackage.haskell.org";
@@ -480,7 +454,7 @@ mkDerivation {
 ;
 }
 ;
-  aeson = {
+      aeson = {
   meta = {
     sha256 = "1y6pc2nj4y41zmk9dsa11r2l8pdn1mr60fbmbjg25pbnzz3b38j2";
     url = "https://hackage.haskell.org";
@@ -525,7 +499,7 @@ mkDerivation {
 ;
 }
 ;
-  ansi-terminal = {
+      ansi-terminal = {
   meta = {
     sha256 = "0n5kp46vghxa8v950qjjgkn7vlr4631jnvbkz45qmmwcw2l5npkj";
     url = "https://hackage.haskell.org";
@@ -546,7 +520,7 @@ mkDerivation {
 ;
 }
 ;
-  ansi-terminal-types = {
+      ansi-terminal-types = {
   meta = {
     sha256 = "1xyq225ff8r0ymrhmr5fj3zk3qw87dqiz3makjyabn07dbqj3chq";
     url = "https://hackage.haskell.org";
@@ -565,7 +539,7 @@ mkDerivation {
 ;
 }
 ;
-  async = {
+      async = {
   meta = {
     sha256 = "1731pcifiskq6g1b72p34phx85l65ax7mbjw11310b3zwzk0ldyn";
     url = "https://hackage.haskell.org";
@@ -591,7 +565,7 @@ mkDerivation {
 ;
 }
 ;
-  attoparsec = {
+      attoparsec = {
   meta = {
     sha256 = "0y9dph5axyvr1bfcvmz6qh50bjcp50m2ljra14960anc6g74a3c8";
     url = "https://hackage.haskell.org";
@@ -628,7 +602,7 @@ mkDerivation {
 ;
 }
 ;
-  bifunctors = {
+      bifunctors = {
   meta = {
     sha256 = "0hvfzxbj181y61k14fvs5q2vjp1s7s1fay15q6kzvh1b38wg7y0l";
     url = "https://hackage.haskell.org";
@@ -655,7 +629,7 @@ mkDerivation {
 ;
 }
 ;
-  bytebuild = {
+      bytebuild = {
   meta = {
     sha256 = "130n1pc4pxxsisiz9mfv6cxbykl7gdz2cvdbnvq5jkhdivrm3izf";
     url = "https://hackage.haskell.org";
@@ -691,7 +665,7 @@ mkDerivation {
 ;
 }
 ;
-  byteslice = {
+      byteslice = {
   meta = {
     sha256 = "1visf8kggxd305vihzk22wsw0find1x93xwqh544hb2amr9gfkiz";
     url = "https://hackage.haskell.org";
@@ -722,7 +696,7 @@ mkDerivation {
 ;
 }
 ;
-  bytesmith = {
+      bytesmith = {
   meta = {
     sha256 = "1zg4cw9v0mx26zns87yqlk441qaccymy8l5gas9d8mzgdmsl3nsa";
     url = "https://hackage.haskell.org";
@@ -752,7 +726,7 @@ mkDerivation {
 ;
 }
 ;
-  cabal-doctest = {
+      cabal-doctest = {
   meta = {
     sha256 = "094mvqgh9bhx5v9xanzkhcm8pcxzmkaa68lr3bqpjzkdxydx81nk";
     url = "https://hackage.haskell.org";
@@ -771,7 +745,7 @@ mkDerivation {
 ;
 }
 ;
-  chronos = {
+      chronos = {
   meta = {
     sha256 = "1pbfp25py682d17visa4i9rjxmiim8aykrgs7nv2q9anajv88kdx";
     url = "https://hackage.haskell.org";
@@ -807,7 +781,7 @@ mkDerivation {
 ;
 }
 ;
-  contiguous = {
+      contiguous = {
   meta = {
     sha256 = "10s92va44wsyxpczxdrbki7a14xsmfxxgv5s71k0b1fa5ng58hf4";
     url = "https://hackage.haskell.org";
@@ -836,7 +810,7 @@ mkDerivation {
 ;
 }
 ;
-  data-fix = {
+      data-fix = {
   meta = {
     sha256 = "0x8r2r8gmdvsclaszg90zn7gla6s8r6salbvgfsp0rscdjzj01ry";
     url = "https://hackage.haskell.org";
@@ -855,7 +829,7 @@ mkDerivation {
 ;
 }
 ;
-  exon = {
+      exon = {
   meta = {
     sha256 = "142i8ka6b16ydllhhb2305ml3hij66h6y555fp6cvc82166kdrhb";
     url = "https://hackage.haskell.org";
@@ -882,7 +856,7 @@ mkDerivation {
 ;
 }
 ;
-  generic-lens = {
+      generic-lens = {
   meta = {
     sha256 = "0cd3w5hpf0yqi1vrkxzm4qlc2n797fdmhyhcvkrz4ym19v2vylyb";
     url = "https://hackage.haskell.org";
@@ -908,7 +882,7 @@ mkDerivation {
 ;
 }
 ;
-  generic-lens-core = {
+      generic-lens-core = {
   meta = {
     sha256 = "0innx8ndljssasw9f1fnhwhgjv3smn57kir895d7fbj4r0k8w11s";
     url = "https://hackage.haskell.org";
@@ -927,7 +901,7 @@ mkDerivation {
 ;
 }
 ;
-  hashable = {
+      hashable = {
   meta = {
     sha256 = "0a8jcfmak3b130x5xim4d6qsqmfp8779wvq5va9irncn6827ihzi";
     url = "https://hackage.haskell.org";
@@ -958,7 +932,7 @@ mkDerivation {
 ;
 }
 ;
-  haskell-src-meta = {
+      haskell-src-meta = {
   meta = {
     sha256 = "0ccwgfkb1n31wwfysdhc1mqpcnnxnczwmz3d4avm9yn9a5m1nh4s";
     url = "https://hackage.haskell.org";
@@ -984,7 +958,7 @@ mkDerivation {
 ;
 }
 ;
-  incipit = {
+      incipit = {
   meta = {
     sha256 = "1r3y2wp8wz1ii28a6wb76z6w3sgiah158kwsadrr13w6iryhq047";
     url = "https://hackage.haskell.org";
@@ -1008,7 +982,7 @@ mkDerivation {
 ;
 }
 ;
-  incipit-base = {
+      incipit-base = {
   meta = {
     sha256 = "08ybv7j94yyznrxnrh744bi3i1a00sz8bf5ddfs9vfgfhhkrg8fn";
     url = "https://hackage.haskell.org";
@@ -1031,7 +1005,7 @@ mkDerivation {
 ;
 }
 ;
-  incipit-core = {
+      incipit-core = {
   meta = {
     sha256 = "0qpw07f8ip6h7srqkbzfxyz1z36n75irhc6465s9xvrii1840b2k";
     url = "https://hackage.haskell.org";
@@ -1050,7 +1024,7 @@ mkDerivation {
 ;
 }
 ;
-  indexed-traversable-instances = {
+      indexed-traversable-instances = {
   meta = {
     sha256 = "05vpkasz70yjf09hsmbw7nap70sr8p5b7hrsdbmij8k8xqf3qg8r";
     url = "https://hackage.haskell.org";
@@ -1079,7 +1053,7 @@ mkDerivation {
 ;
 }
 ;
-  integer-conversion = {
+      integer-conversion = {
   meta = {
     sha256 = "0jrch63xc80fq6s14zwi5wcmbrj8zr7anl420sq98aglx3df9yr3";
     url = "https://hackage.haskell.org";
@@ -1104,7 +1078,7 @@ mkDerivation {
 ;
 }
 ;
-  microlens = {
+      microlens = {
   meta = {
     sha256 = "1j40hrllkrzhfa2vxq5m77x4yv8554yknnq0ygwz811mhhq93bpj";
     url = "https://hackage.haskell.org";
@@ -1123,7 +1097,7 @@ mkDerivation {
 ;
 }
 ;
-  microlens-ghc = {
+      microlens-ghc = {
   meta = {
     sha256 = "12hphl1hrhixd91nvbxn2mssn5hqda4ihrwprcbg67bj8wi73am5";
     url = "https://hackage.haskell.org";
@@ -1146,7 +1120,7 @@ mkDerivation {
 ;
 }
 ;
-  natural-arithmetic = {
+      natural-arithmetic = {
   meta = {
     sha256 = "0q156xzpf5fpqp9qjmv3kiny6fcfi7c3z8cz92dvxqm04ndvs437";
     url = "https://hackage.haskell.org";
@@ -1165,7 +1139,7 @@ mkDerivation {
 ;
 }
 ;
-  network-uri = {
+      network-uri = {
   meta = {
     sha256 = "0zj83viziy80f7nybpmc1hki8wrd8pzps31fxns9vxhc1p7l9chj";
     url = "https://hackage.haskell.org";
@@ -1193,7 +1167,7 @@ mkDerivation {
 ;
 }
 ;
-  parsec = {
+      parsec = {
   meta = {
     sha256 = "089j939xxi6w6a2ggr40c4s2kdbwkzap2mnhvimmf45hg865h48n";
     url = "https://hackage.haskell.org";
@@ -1215,7 +1189,7 @@ mkDerivation {
 ;
 }
 ;
-  path = {
+      path = {
   meta = {
     sha256 = "16hgrkvd27c9vp5447d1dv3b3fi0fv0jfig10h2j37mzk4850wg8";
     url = "https://hackage.haskell.org";
@@ -1245,7 +1219,7 @@ mkDerivation {
 ;
 }
 ;
-  path-io = {
+      path-io = {
   meta = {
     sha256 = "063ma7gzqr5c6s8a1yv72jgll3xdajvgclbc8w0ddmqgcrb62x2k";
     url = "https://hackage.haskell.org";
@@ -1271,7 +1245,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy = {
+      polysemy = {
   meta = {
     sha256 = "00dq1ffsd9bld5zag4l2qssbmm4yb234cirsn5f19fmx43cdgngl";
     url = "https://hackage.haskell.org";
@@ -1304,7 +1278,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-chronos = {
+      polysemy-chronos = {
   meta = {
     sha256 = "0srq4xda9rracrf0frqh9vb00fscxyjv8w6fgavgxbxsrir856i8";
     url = "https://hackage.haskell.org";
@@ -1330,7 +1304,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-conc = {
+      polysemy-conc = {
   meta = {
     sha256 = "0lzgw6dqhw0dv00bn9aasys2v8iddxyck5vmpglrp92chba55jxv";
     url = "https://hackage.haskell.org";
@@ -1359,7 +1333,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-log = {
+      polysemy-log = {
   meta = {
     sha256 = "1phzwj2ig0vx1anscg3qv53ysa0f7gks37pc8gfkh2aws3qp6cda";
     url = "https://hackage.haskell.org";
@@ -1391,7 +1365,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-process = {
+      polysemy-process = {
   meta = {
     sha256 = "125fiwq30ybncmc0pb25ki3k2sxbhkjz4k2i53bcj9y026xgvjyi";
     url = "https://hackage.haskell.org";
@@ -1424,7 +1398,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-resume = {
+      polysemy-resume = {
   meta = {
     sha256 = "1achlwdkycbgjlcdkq641r481m1bl9rb7fklbwfb9nnb6xmqyzms";
     url = "https://hackage.haskell.org";
@@ -1450,7 +1424,7 @@ mkDerivation {
 ;
 }
 ;
-  polysemy-time = {
+      polysemy-time = {
   meta = {
     sha256 = "0imvjiybxrsggh72pfkd226pvzhz5hg1zvxyd72b91a3xz1vynmq";
     url = "https://hackage.haskell.org";
@@ -1476,7 +1450,7 @@ mkDerivation {
 ;
 }
 ;
-  primitive-unlifted = {
+      primitive-unlifted = {
   meta = {
     sha256 = "1z4nh2pv9ylbc9mw9dfmjschyn6ci0rqhz5nn9mld3wz45a15aq5";
     url = "https://hackage.haskell.org";
@@ -1503,7 +1477,7 @@ mkDerivation {
 ;
 }
 ;
-  profunctors = {
+      profunctors = {
   meta = {
     sha256 = "17daacfx7hmrkcnp2m7c03c171krphh6hwqljvjfhil67sqviclb";
     url = "https://hackage.haskell.org";
@@ -1527,7 +1501,7 @@ mkDerivation {
 ;
 }
 ;
-  run-st = {
+      run-st = {
   meta = {
     sha256 = "1x5brxdbncfgzvdl8k6h00zpzzv319j7iw3k5lgrimhdm0jz2vz7";
     url = "https://hackage.haskell.org";
@@ -1546,7 +1520,7 @@ mkDerivation {
 ;
 }
 ;
-  scientific = {
+      scientific = {
   meta = {
     sha256 = "0imbwigr1m378bk51gc2d8cbrj5r8sdv3bgvn0386lc07sayp3ng";
     url = "https://hackage.haskell.org";
@@ -1577,7 +1551,7 @@ mkDerivation {
 ;
 }
 ;
-  semialign = {
+      semialign = {
   meta = {
     sha256 = "05h1ab484ghd2wzx4pdlsfwiy6rayy0lzwk9yda9il7fjwi9sj7n";
     url = "https://hackage.haskell.org";
@@ -1603,7 +1577,7 @@ mkDerivation {
 ;
 }
 ;
-  semigroupoids = {
+      semigroupoids = {
   meta = {
     sha256 = "0nc2c573inxnp4nz3pbahb66ca9750zdgashwnak7kxyrq7d763l";
     url = "https://hackage.haskell.org";
@@ -1629,7 +1603,7 @@ mkDerivation {
 ;
 }
 ;
-  strict = {
+      strict = {
   meta = {
     sha256 = "02iyvrr7nd7fnivz78lzdchy8zw1cghqj1qx2yzbbb9869h1mny7";
     url = "https://hackage.haskell.org";
@@ -1653,7 +1627,7 @@ mkDerivation {
 ;
 }
 ;
-  text = {
+      text = {
   meta = {
     sha256 = "1gi9f9karjfl577bmkgd5ldygq68f54nfw8hwpqlsf0b5n4f14s8";
     url = "https://hackage.haskell.org";
@@ -1690,7 +1664,7 @@ mkDerivation {
 ;
 }
 ;
-  text-iso8601 = {
+      text-iso8601 = {
   meta = {
     sha256 = "0lk8y0g5p2zamkgvxy7i5lqfpa4wnic9vg2bl87s801fniwdij3m";
     url = "https://hackage.haskell.org";
@@ -1722,7 +1696,7 @@ mkDerivation {
 ;
 }
 ;
-  text-short = {
+      text-short = {
   meta = {
     sha256 = "1yzyzklry9cdc12283b0zf0kpa8nb7gixmdaf3l8x7388zpxhhay";
     url = "https://hackage.haskell.org";
@@ -1749,7 +1723,7 @@ mkDerivation {
 ;
 }
 ;
-  th-abstraction = {
+      th-abstraction = {
   meta = {
     sha256 = "1w07ysxrbjm1rhlg9nhlq5y72s5wr4vqmcy99chvyb56wka0grbq";
     url = "https://hackage.haskell.org";
@@ -1772,7 +1746,7 @@ mkDerivation {
 ;
 }
 ;
-  th-expand-syns = {
+      th-expand-syns = {
   meta = {
     sha256 = "05p82h3hb7ayidc98qq2bgj790d7km9ixp5ijgc1qqkksg3php6z";
     url = "https://hackage.haskell.org";
@@ -1796,7 +1770,7 @@ mkDerivation {
 ;
 }
 ;
-  th-lift = {
+      th-lift = {
   meta = {
     sha256 = "1grxjbssc0m4r5qqz9zrxy0wzxhbdwdn8ihlmsjmdgizdn7isx0a";
     url = "https://hackage.haskell.org";
@@ -1816,7 +1790,7 @@ mkDerivation {
 ;
 }
 ;
-  th-orphans = {
+      th-orphans = {
   meta = {
     sha256 = "0xzd58ak287rvdf67v8xjxqvx00crpsaa37n447xl85qrpk43fmk";
     url = "https://hackage.haskell.org";
@@ -1842,7 +1816,7 @@ mkDerivation {
 ;
 }
 ;
-  th-reify-many = {
+      th-reify-many = {
   meta = {
     sha256 = "0g9axz1iszl02cxvy2zgmzinjvz8pbsfq3lzhspshlw5bgcsld39";
     url = "https://hackage.haskell.org";
@@ -1866,7 +1840,7 @@ mkDerivation {
 ;
 }
 ;
-  these = {
+      these = {
   meta = {
     sha256 = "0jqchlmycfcvkff48shhkswansnzrw57q8945m483mrd59zpg27k";
     url = "https://hackage.haskell.org";
@@ -1885,7 +1859,7 @@ mkDerivation {
 ;
 }
 ;
-  time-compat = {
+      time-compat = {
   meta = {
     sha256 = "02yq6qc9fbawpxkypaf4nm9vidfv5vvgidxyj4r3dxa4lb29jd2p";
     url = "https://hackage.haskell.org";
@@ -1913,7 +1887,7 @@ mkDerivation {
 ;
 }
 ;
-  type-errors = {
+      type-errors = {
   meta = {
     sha256 = "09rkyqhx8jnzqiq7gpcm5jd1xd435h0ma0b2sff18lk31qv01x6g";
     url = "https://hackage.haskell.org";
@@ -1940,7 +1914,7 @@ mkDerivation {
 ;
 }
 ;
-  typed-process = {
+      typed-process = {
   meta = {
     sha256 = "06ysyzxvlkn1fhd0nxk0q9dcy9vrdqj7c51bv9x33gjbxbaqnfs3";
     url = "https://hackage.haskell.org";
@@ -1969,7 +1943,7 @@ mkDerivation {
 ;
 }
 ;
-  unlifted = {
+      unlifted = {
   meta = {
     sha256 = "0wfwfiyarrvhr5d41sz4xd109jsqcyp4kd98kzcc6xlz6ikrkxfh";
     url = "https://hackage.haskell.org";
@@ -1988,7 +1962,7 @@ mkDerivation {
 ;
 }
 ;
-  unordered-containers = {
+      unordered-containers = {
   meta = {
     sha256 = "0na84q5vxxww3pmz72ihpx4j7dhk71z28r55i7j0pq7mj27jasb0";
     url = "https://hackage.haskell.org";
@@ -2019,7 +1993,7 @@ mkDerivation {
 ;
 }
 ;
-  uuid-types = {
+      uuid-types = {
   meta = {
     sha256 = "1i8cm1qyni59vb0q7hb36djskyhysbcm36cgsysarj6fp7hni1dz";
     url = "https://hackage.haskell.org";
@@ -2048,7 +2022,7 @@ mkDerivation {
 ;
 }
 ;
-  wide-word = {
+      wide-word = {
   meta = {
     sha256 = "0f7i617wrbjmxx8nqmgd0af4vgsprkg8ng7xh3lpw2d4qnkgdq4i";
     url = "https://hackage.haskell.org";
@@ -2073,7 +2047,7 @@ mkDerivation {
 ;
 }
 ;
-  witherable = {
+      witherable = {
   meta = {
     sha256 = "1ga4al351kwcfvsdr1ngyzj4aypvl46w357jflmgxacad8iqx4ik";
     url = "https://hackage.haskell.org";
@@ -2104,9 +2078,6 @@ mkDerivation {
 ;
 }
 ;
-};
-min = {
-};
-profiled = {
-};
+    };
+  };
 }
