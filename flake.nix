@@ -83,6 +83,7 @@
           "Polysemy.Resume"
           "Polysemy.Time"
           "Conc"
+          "Gate"
           "Log"
           "Queue"
           "Sync"
