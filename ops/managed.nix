@@ -566,6 +566,10 @@
       };
     };
   };
-  packages = {};
+  packages = {
+    prelate = {
+      version = "0.9.0.0";
+    };
+  };
   resolving = false;
 }
