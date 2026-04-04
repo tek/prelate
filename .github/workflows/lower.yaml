@@ -1,9 +1,16 @@
 name: Maintain lower bounds
-on: [workflow_dispatch, pull_request, push]
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  pull_request:
+
 permissions:
   contents: write
   pull-requests: write
   id-token: write
+
 jobs:
   lower-pr:
     uses: tek/hix/.github/workflows/bounds.yaml@main
