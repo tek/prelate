@@ -100,7 +100,12 @@
       enable = true;
       lower.enable = true;
       latest.compiler = "ghc912";
-      lower.compiler = "ghc98";
+      lower = {
+        compiler = "ghc94";
+        envs.solverOverrides = {hackage, jailbreak, unbreak, ...}: {
+          bytesmith = hackage "0.3.11.0" "1z083sx6gbrsnlwfhiwcpym1kwyxmjhwrngsi3axa7bmg5c5za5c";
+        };
+      };
     };
 
     release.versionFile = "ops/version.nix";
@@ -108,7 +113,7 @@
 
     package-sets = {
 
-      ghc912.overrides = {jailbreak, ...}: {
+      ghc912.overrides = {hackage, jailbreak, ...}: {
         incipit = jailbreak;
         polysemy-chronos = jailbreak;
         polysemy-conc = jailbreak;
@@ -120,17 +125,14 @@
       };
 
       ghc98.overrides = {jailbreak, hackage, ...}: {
-        chronos = jailbreak (hackage "1.1.6.2" "1pbfp25py682d17visa4i9rjxmiim8aykrgs7nv2q9anajv88kdx");
+        chronos = jailbreak;
       };
 
     };
 
     envs.dev.package-set.extends = "ghc912";
 
-    internal.hixCli = {
-      commit = "3d685c06f2689aaf907b427aa61018aa2ef6f0e8";
-      sha256 = "07qyncxvw11k3rkf43nfpa8zql88hxc8w6p0j47bhi9whlk0y6s2";
-    };
+    internal.hixCli.dev = true;
 
   };
 }
