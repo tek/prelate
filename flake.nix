@@ -108,7 +108,6 @@
       };
     };
 
-    release.versionFile = "ops/version.nix";
     hackage.repos."hackage.haskell.org".user = "tek";
 
     package-sets = {
